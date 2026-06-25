@@ -1,0 +1,66 @@
+﻿@model AutoService.Application.DTOs.ServiserDto
+
+@{
+    ViewData["Title"] = "Izmena servisera";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header">
+            <h2>Izmena servisera</h2>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Edit" method="post">
+                <input asp-for="ServiserId" type="hidden" />
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Ime" class="form-label"></label>
+                    <input asp-for="Ime" class="form-control" />
+                    <span asp-validation-for="Ime"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Prezime" class="form-label"></label>
+                    <input asp-for="Prezime" class="form-control" />
+                    <span asp-validation-for="Prezime"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Specijalizacija"
+                           class="form-label"></label>
+                    <input asp-for="Specijalizacija"
+                           class="form-control" />
+                    <span asp-validation-for="Specijalizacija"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input asp-for="Aktivan"
+                           class="form-check-input" />
+                    <label asp-for="Aktivan"
+                           class="form-check-label">
+                        Aktivan
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Sačuvaj izmene
+                </button>
+
+                <a asp-action="Index" class="btn btn-secondary">
+                    Nazad
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

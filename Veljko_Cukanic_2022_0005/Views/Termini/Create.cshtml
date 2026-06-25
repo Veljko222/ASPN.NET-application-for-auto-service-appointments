@@ -1,0 +1,116 @@
+﻿@model AutoService.Application.DTOs.ZakaziTerminDto
+
+@{
+    ViewData["Title"] = "Zakazivanje termina";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header">
+            <h2>Zakazivanje termina</h2>
+        </div>
+
+        <div class="card-body">
+            <form asp-controller="Termini"
+                  asp-action="Create"
+                  method="post">
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3">
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="VoziloId"
+                           class="form-label">
+                    </label>
+
+                    <select asp-for="VoziloId"
+                            asp-items="ViewBag.Vozila"
+                            class="form-select">
+                        <option value="">Izaberite vozilo</option>
+                    </select>
+
+                    <span asp-validation-for="VoziloId"
+                          class="text-danger">
+                    </span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ServiserId"
+                           class="form-label">
+                    </label>
+
+                    <select asp-for="ServiserId"
+                            asp-items="ViewBag.Serviseri"
+                            class="form-select">
+                        <option value="">Izaberite servisera</option>
+                    </select>
+
+                    <span asp-validation-for="ServiserId"
+                          class="text-danger">
+                    </span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ServisnaUslugaId"
+                           class="form-label">
+                    </label>
+
+                    <select asp-for="ServisnaUslugaId"
+                            asp-items="ViewBag.Usluge"
+                            class="form-select">
+                        <option value="">Izaberite uslugu</option>
+                    </select>
+
+                    <span asp-validation-for="ServisnaUslugaId"
+                          class="text-danger">
+                    </span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DatumIVreme"
+                           class="form-label">
+                    </label>
+
+                    <input asp-for="DatumIVreme"
+                           type="datetime-local"
+                           class="form-control" />
+
+                    <span asp-validation-for="DatumIVreme"
+                          class="text-danger">
+                    </span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Napomena"
+                           class="form-label">
+                    </label>
+
+                    <textarea asp-for="Napomena"
+                              class="form-control"
+                                  rows="4">
+                    </textarea>
+
+                        <span asp-validation-for="Napomena"
+                              class="text-danger">
+                        </span>
+                    </div>
+
+                    <button type="submit"
+                            class="btn btn-primary">
+                        Zakaži termin
+                    </button>
+
+                    <a asp-controller="Termini"
+                           asp-action="Index"
+                           class="btn btn-secondary">
+                        Nazad
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }

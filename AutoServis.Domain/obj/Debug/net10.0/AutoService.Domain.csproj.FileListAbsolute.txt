@@ -1,0 +1,11 @@
+C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\bin\Debug\net10.0\AutoService.Domain.deps.json
+C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\bin\Debug\net10.0\AutoService.Domain.dll
+C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\bin\Debug\net10.0\AutoService.Domain.pdb
+C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\AutoService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\AutoService.Domain.AssemblyInfoInputs.cache
+C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\AutoService.Domain.AssemblyInfo.cs
+C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\AutoService.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\AutoService.Domain.dll
+C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\refint\AutoService.Domain.dll
+C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\AutoService.Domain.pdb
+C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\ref\AutoService.Domain.dll

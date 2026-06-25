@@ -1,0 +1,147 @@
+is_global = true
+build_property.TargetFramework = net10.0
+build_property.TargetFramework = net10.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.RootNamespace = AutoService.Web
+build_property.RootNamespace = AutoService.Web
+build_property.ProjectDir = C:\Users\Veljko\Desktop\Projekat .Net\Veljko_Cukanic_2022_0005\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Veljko\Desktop\Projekat .Net\Veljko_Cukanic_2022_0005
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Korisnici/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWNpXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Korisnici/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWNpXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Korisnici/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWNpXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Korisnici/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWNpXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Korisnici/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWNpXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Serviseri/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmlzZXJpXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Serviseri/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmlzZXJpXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Serviseri/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmlzZXJpXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Serviseri/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmlzZXJpXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Serviseri/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmlzZXJpXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/ServisneUsluge/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmlzbmVVc2x1Z2VcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/ServisneUsluge/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmlzbmVVc2x1Z2VcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/ServisneUsluge/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmlzbmVVc2x1Z2VcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/ServisneUsluge/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmlzbmVVc2x1Z2VcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/ServisneUsluge/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmlzbmVVc2x1Z2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Termini/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybWluaVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Termini/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVybWluaVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Vozila/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm96aWxhXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Vozila/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm96aWxhXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Vozila/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm96aWxhXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Vozila/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm96aWxhXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Vozila/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm96aWxhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Veljko/Desktop/Projekat .Net/Veljko_Cukanic_2022_0005/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-nlt9fqft0h

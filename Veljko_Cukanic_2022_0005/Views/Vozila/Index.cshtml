@@ -1,0 +1,109 @@
+﻿@model IEnumerable<AutoService.Domain.Models.Vozilo>
+
+@{
+    ViewData["Title"] = "Vozila";
+    var vozila = Model ?? Enumerable.Empty<AutoService.Domain.Models.Vozilo>();
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Vozila</h2>
+
+        <a asp-action="Create" class="btn btn-primary">
+            Dodaj vozilo
+        </a>
+    </div>
+
+    @if (TempData["Uspeh"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Uspeh"]
+        </div>
+    }
+
+    @if (TempData["Greska"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Greska"]
+        </div>
+    }
+
+    <form method="get" class="row g-2 mb-3">
+        <div class="col-md-8">
+            <input type="text"
+                   name="pretraga"
+                   value="@ViewBag.Pretraga"
+                   class="form-control"
+                   placeholder="Pretraži po marki, modelu, registraciji ili vlasniku" />
+        </div>
+
+        <div class="col-md-4">
+            <button type="submit"
+                    class="btn btn-outline-primary">
+                Pretraži
+            </button>
+
+            <a asp-action="Index"
+                   class="btn btn-outline-secondary">
+                Resetuj
+            </a>
+        </div>
+    </form>
+
+    @if (!vozila.Any())
+    {
+        <div class="alert alert-info">
+            Nema evidentiranih vozila.
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped table-bordered align-middle">
+            <thead>
+                <tr>
+                    <th>Marka</th>
+                    <th>Model</th>
+                    <th>Godina</th>
+                    <th>Registracija</th>
+                    <th>Vlasnik</th>
+                    <th>Akcije</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var vozilo in vozila)
+                {
+                    <tr>
+                        <td>@vozilo.Marka</td>
+                        <td>@vozilo.Model</td>
+                        <td>@vozilo.GodinaProizvodnje</td>
+                        <td>@vozilo.Registracija</td>
+                        <td>
+                            @vozilo.Korisnik?.Ime
+                            @vozilo.Korisnik?.Prezime
+                        </td>
+                        <td>
+                            <a asp-action="Details"
+                                   asp-route-id="@vozilo.VoziloId"
+                                   class="btn btn-info btn-sm">
+                                Detalji
+                            </a>
+
+                            <a asp-action="Edit"
+                                   asp-route-id="@vozilo.VoziloId"
+                                   class="btn btn-warning btn-sm">
+                                Izmeni
+                            </a>
+
+                            <a asp-action="Delete"
+                                   asp-route-id="@vozilo.VoziloId"
+                                   class="btn btn-danger btn-sm">
+                                Obriši
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

@@ -1,0 +1,89 @@
+﻿@model AutoService.Domain.Models.ServisnaUsluga
+
+@{
+    ViewData["Title"] = "Detalji servisne usluge";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header">
+            <h2>Detalji servisne usluge</h2>
+        </div>
+
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Naziv</dt>
+                <dd class="col-sm-9">@Model.Naziv</dd>
+
+                <dt class="col-sm-3">Opis</dt>
+                <dd class="col-sm-9">@Model.Opis</dd>
+
+                <dt class="col-sm-3">Cena</dt>
+                <dd class="col-sm-9">
+                    @Model.Cena.ToString("N2") RSD
+                </dd>
+
+                <dt class="col-sm-3">Trajanje</dt>
+                <dd class="col-sm-9">
+                    @Model.TrajanjeUMinutima minuta
+                </dd>
+
+                <dt class="col-sm-3">Status</dt>
+                <dd class="col-sm-9">
+                    @(Model.Aktivna ? "Aktivna" : "Neaktivna")
+                </dd>
+            </dl>
+
+            <hr />
+
+            <h4>Termini za ovu uslugu</h4>
+
+            @if (!Model.Termini.Any())
+            {
+                <div class="alert alert-info">
+                    Nema evidentiranih termina za ovu uslugu.
+                </div>
+            }
+            else
+            {
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Vozilo</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var termin in Model.Termini
+                            .OrderByDescending(t => t.DatumIVreme))
+                        {
+                            <tr>
+                                <td>
+                                    @termin.DatumIVreme.ToString("dd.MM.yyyy. HH:mm")
+                                </td>
+                                <td>
+                                    @termin.Vozilo?.Marka
+                                    @termin.Vozilo?.Model
+                                </td>
+                                <td>@termin.Status</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+
+            <a asp-action="Edit"
+                   asp-route-id="@Model.ServisnaUslugaId"
+                   class="btn btn-warning">
+                Izmeni
+            </a>
+
+            <a asp-action="Index"
+                   class="btn btn-secondary">
+                Nazad
+            </a>
+        </div>
+    </div>
+</div>

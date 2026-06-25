@@ -1,0 +1,56 @@
+﻿@model AutoService.Domain.Models.ServisnaUsluga
+
+@{
+    ViewData["Title"] = "Brisanje servisne usluge";
+}
+
+<div class="container mt-4">
+    <div class="card border-danger shadow">
+        <div class="card-header bg-danger text-white">
+            <h2>Brisanje servisne usluge</h2>
+        </div>
+
+        <div class="card-body">
+            <p>
+                Da li ste sigurni da želite da obrišete servisnu uslugu?
+            </p>
+
+            <dl class="row">
+                <dt class="col-sm-3">Naziv</dt>
+                <dd class="col-sm-9">@Model.Naziv</dd>
+
+                <dt class="col-sm-3">Cena</dt>
+                <dd class="col-sm-9">
+                    @Model.Cena.ToString("N2") RSD
+                </dd>
+
+                <dt class="col-sm-3">Broj termina</dt>
+                <dd class="col-sm-9">
+                    @Model.Termini.Count
+                </dd>
+            </dl>
+
+            @if (Model.Termini.Any())
+            {
+                <div class="alert alert-warning">
+                    Usluga ima termine i biće deaktivirana umesto obrisana.
+                </div>
+            }
+
+            <form asp-action="DeleteConfirmed"
+                  asp-route-id="@Model.ServisnaUslugaId"
+                  method="post">
+
+                <button type="submit"
+                        class="btn btn-danger">
+                    Potvrdi
+                </button>
+
+                <a asp-action="Index"
+                       class="btn btn-secondary">
+                    Odustani
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

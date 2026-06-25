@@ -1,0 +1,120 @@
+﻿@model IEnumerable<AutoService.Domain.Models.ServisnaUsluga>
+
+@{
+    ViewData["Title"] = "Servisne usluge";
+    var usluge = Model ?? Enumerable.Empty<AutoService.Domain.Models.ServisnaUsluga>();
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Servisne usluge</h2>
+
+        <a asp-action="Create" class="btn btn-primary">
+            Dodaj uslugu
+        </a>
+    </div>
+
+    @if (TempData["Uspeh"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Uspeh"]
+        </div>
+    }
+
+    <form method="get" class="row g-2 mb-3">
+        <div class="col-md-6">
+            <input type="text"
+                   name="pretraga"
+                   value="@ViewBag.Pretraga"
+                   class="form-control"
+                   placeholder="Naziv ili opis usluge" />
+        </div>
+
+        <div class="col-md-3">
+            <select name="aktivna" class="form-select">
+                <option value="">Sve usluge</option>
+                <option value="true"
+                        selected="@(ViewBag.Aktivna == true)">
+                    Aktivne
+                </option>
+                <option value="false"
+                        selected="@(ViewBag.Aktivna == false)">
+                    Neaktivne
+                </option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <button type="submit"
+                    class="btn btn-outline-primary">
+                Pretraži
+            </button>
+
+            <a asp-action="Index"
+                   class="btn btn-outline-secondary">
+                Resetuj
+            </a>
+        </div>
+    </form>
+
+    @if (!usluge.Any())
+    {
+        <div class="alert alert-info">
+            Nema servisnih usluga.
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped table-bordered align-middle">
+            <thead>
+                <tr>
+                    <th>Naziv</th>
+                    <th>Cena</th>
+                    <th>Trajanje</th>
+                    <th>Status</th>
+                    <th>Akcije</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var usluga in usluge)
+                {
+                    <tr>
+                        <td>@usluga.Naziv</td>
+                        <td>@usluga.Cena.ToString("N2") RSD</td>
+                        <td>@usluga.TrajanjeUMinutima min</td>
+                        <td>
+                            @if (usluga.Aktivna)
+                            {
+                                <span class="badge bg-success">Aktivna</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Neaktivna</span>
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Details"
+                                   asp-route-id="@usluga.ServisnaUslugaId"
+                                   class="btn btn-info btn-sm">
+                                Detalji
+                            </a>
+
+                            <a asp-action="Edit"
+                                   asp-route-id="@usluga.ServisnaUslugaId"
+                                   class="btn btn-warning btn-sm">
+                                Izmeni
+                            </a>
+
+                            <a asp-action="Delete"
+                                   asp-route-id="@usluga.ServisnaUslugaId"
+                                   class="btn btn-danger btn-sm">
+                                Obriši
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

@@ -1,0 +1,120 @@
+﻿@model IEnumerable<AutoService.Domain.Models.Serviser>
+
+@{
+    ViewData["Title"] = "Serviseri";
+    var serviseri = Model ?? Enumerable.Empty<AutoService.Domain.Models.Serviser>();
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Serviseri</h2>
+
+        <a asp-action="Create" class="btn btn-primary">
+            Dodaj servisera
+        </a>
+    </div>
+
+    @if (TempData["Uspeh"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Uspeh"]
+        </div>
+    }
+
+    <form method="get" class="row g-2 mb-3">
+        <div class="col-md-6">
+            <input type="text"
+                   name="pretraga"
+                   value="@ViewBag.Pretraga"
+                   class="form-control"
+                   placeholder="Ime, prezime ili specijalizacija" />
+        </div>
+
+        <div class="col-md-3">
+            <select name="aktivan" class="form-select">
+                <option value="">Svi serviseri</option>
+                <option value="true"
+                        selected="@(ViewBag.Aktivan == true)">
+                    Aktivni
+                </option>
+                <option value="false"
+                        selected="@(ViewBag.Aktivan == false)">
+                    Neaktivni
+                </option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <button type="submit"
+                    class="btn btn-outline-primary">
+                Pretraži
+            </button>
+
+            <a asp-action="Index"
+                   class="btn btn-outline-secondary">
+                Resetuj
+            </a>
+        </div>
+    </form>
+
+    @if (!serviseri.Any())
+    {
+        <div class="alert alert-info">
+            Nema servisera.
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped table-bordered align-middle">
+            <thead>
+                <tr>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Specijalizacija</th>
+                    <th>Status</th>
+                    <th>Akcije</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var serviser in serviseri)
+                {
+                    <tr>
+                        <td>@serviser.Ime</td>
+                        <td>@serviser.Prezime</td>
+                        <td>@serviser.Specijalizacija</td>
+                        <td>
+                            @if (serviser.Aktivan)
+                            {
+                                <span class="badge bg-success">Aktivan</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-secondary">Neaktivan</span>
+                            }
+                        </td>
+                        <td>
+                            <a asp-action="Details"
+                                   asp-route-id="@serviser.ServiserId"
+                                   class="btn btn-info btn-sm">
+                                Detalji
+                            </a>
+
+                            <a asp-action="Edit"
+                                   asp-route-id="@serviser.ServiserId"
+                                   class="btn btn-warning btn-sm">
+                                Izmeni
+                            </a>
+
+                            <a asp-action="Delete"
+                                   asp-route-id="@serviser.ServiserId"
+                                   class="btn btn-danger btn-sm">
+                                Obriši
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

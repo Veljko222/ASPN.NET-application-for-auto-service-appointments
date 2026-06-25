@@ -1,0 +1,15 @@
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\bin\Debug\net10.0\AutoService.Application.deps.json
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\bin\Debug\net10.0\AutoService.Application.dll
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\bin\Debug\net10.0\AutoService.Application.pdb
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\AutoService.Application.csproj.AssemblyReference.cache
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\AutoService.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\AutoService.Application.AssemblyInfoInputs.cache
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\AutoService.Application.AssemblyInfo.cs
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\AutoService.Application.csproj.CoreCompileInputs.cache
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\AutoServ.40D37E8C.Up2Date
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\AutoService.Application.dll
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\refint\AutoService.Application.dll
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\AutoService.Application.pdb
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\ref\AutoService.Application.dll
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\bin\Debug\net10.0\AutoService.Domain.dll
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\bin\Debug\net10.0\AutoService.Domain.pdb

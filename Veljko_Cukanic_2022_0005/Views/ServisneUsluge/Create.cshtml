@@ -1,0 +1,77 @@
+﻿@model AutoService.Application.DTOs.ServisnaUslugaDto
+
+@{
+    ViewData["Title"] = "Dodavanje servisne usluge";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header">
+            <h2>Dodavanje servisne usluge</h2>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Naziv" class="form-label"></label>
+                    <input asp-for="Naziv" class="form-control" />
+                    <span asp-validation-for="Naziv"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Opis" class="form-label"></label>
+                    <textarea asp-for="Opis"
+                              class="form-control"
+                              rows="4"></textarea>
+                    <span asp-validation-for="Opis"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Cena" class="form-label"></label>
+                    <input asp-for="Cena"
+                           type="number"
+                           step="0.01"
+                           class="form-control" />
+                    <span asp-validation-for="Cena"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="TrajanjeUMinutima"
+                           class="form-label"></label>
+                    <input asp-for="TrajanjeUMinutima"
+                           type="number"
+                           class="form-control" />
+                    <span asp-validation-for="TrajanjeUMinutima"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="form-check mb-3">
+                    <input asp-for="Aktivna"
+                           class="form-check-input" />
+                    <label asp-for="Aktivna"
+                           class="form-check-label">
+                        Aktivna
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Sačuvaj
+                </button>
+
+                <a asp-action="Index" class="btn btn-secondary">
+                    Nazad
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

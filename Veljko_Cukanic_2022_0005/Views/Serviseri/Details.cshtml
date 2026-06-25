@@ -1,0 +1,87 @@
+﻿@model AutoService.Domain.Models.Serviser
+
+@{
+    ViewData["Title"] = "Detalji servisera";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header">
+            <h2>Detalji servisera</h2>
+        </div>
+
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Ime i prezime</dt>
+                <dd class="col-sm-9">
+                    @Model.Ime @Model.Prezime
+                </dd>
+
+                <dt class="col-sm-3">Specijalizacija</dt>
+                <dd class="col-sm-9">
+                    @Model.Specijalizacija
+                </dd>
+
+                <dt class="col-sm-3">Status</dt>
+                <dd class="col-sm-9">
+                    @(Model.Aktivan ? "Aktivan" : "Neaktivan")
+                </dd>
+            </dl>
+
+            <hr />
+
+            <h4>Termini servisera</h4>
+
+            @if (!Model.Termini.Any())
+            {
+                <div class="alert alert-info">
+                    Serviser nema evidentirane termine.
+                </div>
+            }
+            else
+            {
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Vozilo</th>
+                            <th>Usluga</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var termin in Model.Termini
+                            .OrderByDescending(t => t.DatumIVreme))
+                        {
+                            <tr>
+                                <td>
+                                    @termin.DatumIVreme.ToString("dd.MM.yyyy. HH:mm")
+                                </td>
+                                <td>
+                                    @termin.Vozilo?.Marka
+                                    @termin.Vozilo?.Model
+                                </td>
+                                <td>
+                                    @termin.ServisnaUsluga?.Naziv
+                                </td>
+                                <td>@termin.Status</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+
+            <a asp-action="Edit"
+                   asp-route-id="@Model.ServiserId"
+                   class="btn btn-warning">
+                Izmeni
+            </a>
+
+            <a asp-action="Index"
+                   class="btn btn-secondary">
+                Nazad
+            </a>
+        </div>
+    </div>
+</div>

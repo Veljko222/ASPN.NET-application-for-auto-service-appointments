@@ -1,0 +1,122 @@
+﻿@model IEnumerable<AutoService.Domain.Models.Termin>
+
+@{
+    ViewData["Title"] = "Termini";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Zakazani termini</h2>
+
+        <a asp-action="Create" class="btn btn-primary">
+            Novi termin
+        </a>
+    </div>
+
+    @if (TempData["Uspeh"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Uspeh"]
+        </div>
+    }
+    @if (TempData["Greska"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Greska"]
+        </div>
+    }
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-info">
+            Trenutno nema zakazanih termina.
+        </div>
+    }
+    else
+    {
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Vozilo</th>
+                    <th>Vlasnik</th>
+                    <th>Serviser</th>
+                    <th>Usluga</th>
+                    <th>Cena</th>
+                    <th>Status</th>
+                    <th>Akcije</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var termin in Model)
+                {
+                    <tr>
+                        <td>@termin.DatumIVreme.ToString("dd.MM.yyyy. HH:mm")</td>
+
+                        <td>
+                            @termin.Vozilo.Marka
+                            @termin.Vozilo.Model
+                            (@termin.Vozilo.Registracija)
+                        </td>
+
+                        <td>
+                            @termin.Vozilo.Korisnik.Ime
+                            @termin.Vozilo.Korisnik.Prezime
+                        </td>
+
+                        <td>
+                            @termin.Serviser.Ime
+                            @termin.Serviser.Prezime
+                        </td>
+
+                        <td>@termin.ServisnaUsluga.Naziv</td>
+
+                        <td>
+                            @termin.ServisnaUsluga.Cena.ToString("N2") RSD
+                        </td>
+
+                        <td>@termin.Status</td>
+
+                        <td>
+                            @if (termin.Status != AutoService.Domain.Enums.StatusTermina.Otkazan &&
+                                 termin.Status != AutoService.Domain.Enums.StatusTermina.Zavrsen)
+                            {
+                                <div class="d-flex gap-2">
+                                    <form asp-controller="Termini"
+                                          asp-action="Zavrsi"
+                                          asp-route-id="@termin.TerminId"
+                                          method="post">
+
+                                        <button type="submit"
+                                                class="btn btn-success btn-sm">
+                                            Završi
+                                        </button>
+                                    </form>
+
+                                    <form asp-controller="Termini"
+                                          asp-action="Otkazi"
+                                          asp-route-id="@termin.TerminId"
+                                          method="post"
+                                          onsubmit="return confirm('Da li sigurno želite da otkažete termin?');">
+
+                                        <button type="submit"
+                                                class="btn btn-danger btn-sm">
+                                            Otkaži
+                                        </button>
+                                    </form>
+                                </div>
+                            }
+                            else
+                            {
+                                <span class="text-muted">
+                                    Nema dostupnih akcija
+                                </span>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

@@ -1,0 +1,1015 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\korisnici\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\korisnici\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\controllers\\korisnicicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:controllers\\korisnicicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\controllers\\servisericontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:controllers\\servisericontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E1C32D-59F0-D460-5592-F3D6227258E6}|..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.infrastructure\\repositories\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D1CE17-F04A-46DF-9998-0359302EFA0C}|..\\AutoService.Application\\AutoService.Application.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.application\\systemoperations\\otkaziterminoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D1CE17-F04A-46DF-9998-0359302EFA0C}|..\\AutoService.Application\\AutoService.Application.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.application\\systemoperations\\zavrsiterminoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D1CE17-F04A-46DF-9998-0359302EFA0C}|..\\AutoService.Application\\AutoService.Application.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.application\\systemoperations\\zakaziterminoperation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\controllers\\terminicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:controllers\\terminicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E1C32D-59F0-D460-5592-F3D6227258E6}|..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.infrastructure\\data\\autoservicedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E1C32D-59F0-D460-5592-F3D6227258E6}|..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.infrastructure\\repositories\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\termini\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\termini\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\termini\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\termini\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E1C32D-59F0-D460-5592-F3D6227258E6}|..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.infrastructure\\configuration\\korisnikconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E1C32D-59F0-D460-5592-F3D6227258E6}|..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.infrastructure\\configuration\\serviserconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E1C32D-59F0-D460-5592-F3D6227258E6}|..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.infrastructure\\configuration\\servisnauslugaconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D1CE17-F04A-46DF-9998-0359302EFA0C}|..\\AutoService.Application\\AutoService.Application.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.application\\systemoperations\\systemoperationbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E1C32D-59F0-D460-5592-F3D6227258E6}|..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.infrastructure\\configuration\\terminconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D1CE17-F04A-46DF-9998-0359302EFA0C}|..\\AutoService.Application\\AutoService.Application.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.application\\repositories\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D1CE17-F04A-46DF-9998-0359302EFA0C}|..\\AutoService.Application\\AutoService.Application.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.application\\dtos\\vozilodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D1CE17-F04A-46DF-9998-0359302EFA0C}|..\\AutoService.Application\\AutoService.Application.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.application\\dtos\\servisnauslugadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D1CE17-F04A-46DF-9998-0359302EFA0C}|..\\AutoService.Application\\AutoService.Application.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.application\\dtos\\serviserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D1CE17-F04A-46DF-9998-0359302EFA0C}|..\\AutoService.Application\\AutoService.Application.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.application\\dtos\\korisnikdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E1C32D-59F0-D460-5592-F3D6227258E6}|..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.infrastructure\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E1C32D-59F0-D460-5592-F3D6227258E6}|..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.infrastructure\\repositories\\terminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D1CE17-F04A-46DF-9998-0359302EFA0C}|..\\AutoService.Application\\AutoService.Application.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.application\\repositories\\iterminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E1C32D-59F0-D460-5592-F3D6227258E6}|..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.infrastructure\\configuration\\voziloconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\autoservice.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:autoservice.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{990F2C88-6359-529F-BDE5-CC22289806EE}|..\\AutoServis.Domain\\AutoService.Domain.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservis.domain\\enums\\statustermina.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{990F2C88-6359-529F-BDE5-CC22289806EE}|..\\AutoServis.Domain\\AutoService.Domain.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservis.domain\\models\\vozilo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{990F2C88-6359-529F-BDE5-CC22289806EE}|..\\AutoServis.Domain\\AutoService.Domain.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservis.domain\\models\\servisnausluga.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{990F2C88-6359-529F-BDE5-CC22289806EE}|..\\AutoServis.Domain\\AutoService.Domain.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservis.domain\\models\\termin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{990F2C88-6359-529F-BDE5-CC22289806EE}|..\\AutoServis.Domain\\AutoService.Domain.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservis.domain\\models\\serviser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{990F2C88-6359-529F-BDE5-CC22289806EE}|..\\AutoServis.Domain\\AutoService.Domain.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservis.domain\\models\\korisnik.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\servisneusluge\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\servisneusluge\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\servisneusluge\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\servisneusluge\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\servisneusluge\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\servisneusluge\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\servisneusluge\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\servisneusluge\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\servisneusluge\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\servisneusluge\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\controllers\\servisneuslugecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:controllers\\servisneuslugecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\serviseri\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\serviseri\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\serviseri\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\serviseri\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\serviseri\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\serviseri\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\serviseri\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\serviseri\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\serviseri\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\serviseri\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\vozila\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\vozila\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\vozila\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\vozila\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\vozila\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\vozila\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\vozila\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\vozila\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\vozila\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\vozila\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\controllers\\vozilacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:controllers\\vozilacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\korisnici\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\korisnici\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\korisnici\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\korisnici\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\korisnici\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\korisnici\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\views\\korisnici\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:views\\korisnici\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D1CE17-F04A-46DF-9998-0359302EFA0C}|..\\AutoService.Application\\AutoService.Application.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.application\\dtos\\zakazitermindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D1CE17-F04A-46DF-9998-0359302EFA0C}|..\\AutoService.Application\\AutoService.Application.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.application\\repositories\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E1C32D-59F0-D460-5592-F3D6227258E6}|..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.infrastructure\\migrations\\20260622212244_prvimigrationsabazom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|c:\\users\\veljko\\desktop\\projekat .net\\veljko_cukanic_2022_0005\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CBBA5709-14D0-E3D0-16C7-77A047D8BA1D}|AutoService.Web.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{990F2C88-6359-529F-BDE5-CC22289806EE}|..\\AutoServis.Domain\\AutoService.Domain.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservis.domain\\autoservice.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{84E1C32D-59F0-D460-5592-F3D6227258E6}|..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj|c:\\users\\veljko\\desktop\\projekat .net\\autoservice.infrastructure\\autoservice.infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ZakaziTerminOperation.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\SystemOperations\\ZakaziTerminOperation.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Application\\SystemOperations\\ZakaziTerminOperation.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\SystemOperations\\ZakaziTerminOperation.cs",
+              "RelativeToolTip": "..\\AutoService.Application\\SystemOperations\\ZakaziTerminOperation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:29:43.955Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "KorisniciController.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Controllers\\KorisniciController.cs",
+              "RelativeDocumentMoniker": "Controllers\\KorisniciController.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Controllers\\KorisniciController.cs",
+              "RelativeToolTip": "Controllers\\KorisniciController.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAAwAQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T13:06:43.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Korisnici\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Korisnici\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Korisnici\\Index.cshtml",
+              "RelativeToolTip": "Views\\Korisnici\\Index.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAABAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:09:31.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServiseriController.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Controllers\\ServiseriController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServiseriController.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Controllers\\ServiseriController.cs",
+              "RelativeToolTip": "Controllers\\ServiseriController.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAmwFIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T13:25:56.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TerminiController.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Controllers\\TerminiController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TerminiController.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Controllers\\TerminiController.cs",
+              "RelativeToolTip": "Controllers\\TerminiController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAwFUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:34:26.785Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ZavrsiTerminOperation.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\SystemOperations\\ZavrsiTerminOperation.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Application\\SystemOperations\\ZavrsiTerminOperation.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\SystemOperations\\ZavrsiTerminOperation.cs",
+              "RelativeToolTip": "..\\AutoService.Application\\SystemOperations\\ZavrsiTerminOperation.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwDcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:55:11.917Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OtkaziTerminOperation.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\SystemOperations\\OtkaziTerminOperation.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Application\\SystemOperations\\OtkaziTerminOperation.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\SystemOperations\\OtkaziTerminOperation.cs",
+              "RelativeToolTip": "..\\AutoService.Application\\SystemOperations\\OtkaziTerminOperation.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwDcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:54:48.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "RelativeToolTip": "..\\AutoService.Infrastructure\\Repositories\\UnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:25:49.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AutoServiceDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Data\\AutoServiceDbContext.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Infrastructure\\Data\\AutoServiceDbContext.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Data\\AutoServiceDbContext.cs",
+              "RelativeToolTip": "..\\AutoService.Infrastructure\\Data\\AutoServiceDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:06:23.111Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Repositories\\Repository.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Infrastructure\\Repositories\\Repository.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Repositories\\Repository.cs",
+              "RelativeToolTip": "..\\AutoService.Infrastructure\\Repositories\\Repository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:25:23.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Termini\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Termini\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Termini\\Index.cshtml",
+              "RelativeToolTip": "Views\\Termini\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-22T21:38:19.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Termini\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Termini\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Termini\\Create.cshtml",
+              "RelativeToolTip": "Views\\Termini\\Create.cshtml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAHMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-22T21:37:18.084Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-24T22:27:49.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ServiserConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Configuration\\ServiserConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Infrastructure\\Configuration\\ServiserConfiguration.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Configuration\\ServiserConfiguration.cs",
+              "RelativeToolTip": "..\\AutoService.Infrastructure\\Configuration\\ServiserConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:18:20.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ServisnaUslugaConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Configuration\\ServisnaUslugaConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Infrastructure\\Configuration\\ServisnaUslugaConfiguration.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Configuration\\ServisnaUslugaConfiguration.cs",
+              "RelativeToolTip": "..\\AutoService.Infrastructure\\Configuration\\ServisnaUslugaConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:18:40.804Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SystemOperationBase.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\SystemOperations\\SystemOperationBase.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Application\\SystemOperations\\SystemOperationBase.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\SystemOperations\\SystemOperationBase.cs",
+              "RelativeToolTip": "..\\AutoService.Application\\SystemOperations\\SystemOperationBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:28:17.403Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "KorisnikConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Configuration\\KorisnikConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Infrastructure\\Configuration\\KorisnikConfiguration.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Configuration\\KorisnikConfiguration.cs",
+              "RelativeToolTip": "..\\AutoService.Infrastructure\\Configuration\\KorisnikConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:17:10.99Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TerminConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Configuration\\TerminConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Infrastructure\\Configuration\\TerminConfiguration.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Configuration\\TerminConfiguration.cs",
+              "RelativeToolTip": "..\\AutoService.Infrastructure\\Configuration\\TerminConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:19:10.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\Repositories\\IRepository.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Application\\Repositories\\IRepository.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\Repositories\\IRepository.cs",
+              "RelativeToolTip": "..\\AutoService.Application\\Repositories\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:24:33.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "VoziloDto.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\DTOs\\VoziloDto.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Application\\DTOs\\VoziloDto.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\DTOs\\VoziloDto.cs",
+              "RelativeToolTip": "..\\AutoService.Application\\DTOs\\VoziloDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T13:14:58.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ServisnaUslugaDto.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\DTOs\\ServisnaUslugaDto.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Application\\DTOs\\ServisnaUslugaDto.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\DTOs\\ServisnaUslugaDto.cs",
+              "RelativeToolTip": "..\\AutoService.Application\\DTOs\\ServisnaUslugaDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T13:31:15.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ServiserDto.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\DTOs\\ServiserDto.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Application\\DTOs\\ServiserDto.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\DTOs\\ServiserDto.cs",
+              "RelativeToolTip": "..\\AutoService.Application\\DTOs\\ServiserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T13:25:33.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "KorisnikDto.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\DTOs\\KorisnikDto.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Application\\DTOs\\KorisnikDto.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\DTOs\\KorisnikDto.cs",
+              "RelativeToolTip": "..\\AutoService.Application\\DTOs\\KorisnikDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T13:06:15.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:20:10.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Data\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Infrastructure\\Data\\DbInitializer.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Data\\DbInitializer.cs",
+              "RelativeToolTip": "..\\AutoService.Infrastructure\\Data\\DbInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:43:36.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "TerminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Repositories\\TerminRepository.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Infrastructure\\Repositories\\TerminRepository.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Repositories\\TerminRepository.cs",
+              "RelativeToolTip": "..\\AutoService.Infrastructure\\Repositories\\TerminRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:26:39.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ITerminRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\Repositories\\ITerminRepository.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Application\\Repositories\\ITerminRepository.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\Repositories\\ITerminRepository.cs",
+              "RelativeToolTip": "..\\AutoService.Application\\Repositories\\ITerminRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:26:14.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "VoziloConfiguration.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Configuration\\VoziloConfiguration.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Infrastructure\\Configuration\\VoziloConfiguration.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Configuration\\VoziloConfiguration.cs",
+              "RelativeToolTip": "..\\AutoService.Infrastructure\\Configuration\\VoziloConfiguration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:17:46.163Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "AutoService.Web.csproj",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\AutoService.Web.csproj",
+              "RelativeDocumentMoniker": "AutoService.Web.csproj",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\AutoService.Web.csproj",
+              "RelativeToolTip": "AutoService.Web.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-22T20:43:33.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "StatusTermina.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\Enums\\StatusTermina.cs",
+              "RelativeDocumentMoniker": "..\\AutoServis.Domain\\Enums\\StatusTermina.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\Enums\\StatusTermina.cs",
+              "RelativeToolTip": "..\\AutoServis.Domain\\Enums\\StatusTermina.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T20:58:03.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Vozilo.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\Models\\Vozilo.cs",
+              "RelativeDocumentMoniker": "..\\AutoServis.Domain\\Models\\Vozilo.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\Models\\Vozilo.cs",
+              "RelativeToolTip": "..\\AutoServis.Domain\\Models\\Vozilo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T20:59:43.198Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ServisnaUsluga.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\Models\\ServisnaUsluga.cs",
+              "RelativeDocumentMoniker": "..\\AutoServis.Domain\\Models\\ServisnaUsluga.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\Models\\ServisnaUsluga.cs",
+              "RelativeToolTip": "..\\AutoServis.Domain\\Models\\ServisnaUsluga.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:00:29.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Termin.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\Models\\Termin.cs",
+              "RelativeDocumentMoniker": "..\\AutoServis.Domain\\Models\\Termin.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\Models\\Termin.cs",
+              "RelativeToolTip": "..\\AutoServis.Domain\\Models\\Termin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:00:40.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Serviser.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\Models\\Serviser.cs",
+              "RelativeDocumentMoniker": "..\\AutoServis.Domain\\Models\\Serviser.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\Models\\Serviser.cs",
+              "RelativeToolTip": "..\\AutoServis.Domain\\Models\\Serviser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:00:05.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Korisnik.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\Models\\Korisnik.cs",
+              "RelativeDocumentMoniker": "..\\AutoServis.Domain\\Models\\Korisnik.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\Models\\Korisnik.cs",
+              "RelativeToolTip": "..\\AutoServis.Domain\\Models\\Korisnik.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T20:59:28.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:38:37.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\ServisneUsluge\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\ServisneUsluge\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\ServisneUsluge\\Create.cshtml",
+              "RelativeToolTip": "Views\\ServisneUsluge\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:33:39.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "ServisneUslugeController.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Controllers\\ServisneUslugeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServisneUslugeController.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Controllers\\ServisneUslugeController.cs",
+              "RelativeToolTip": "Controllers\\ServisneUslugeController.cs",
+              "ViewState": "AgIAALAAAAAAAAAAAAAwwOsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T13:32:01.96Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\ServisneUsluge\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\ServisneUsluge\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\ServisneUsluge\\Index.cshtml",
+              "RelativeToolTip": "Views\\ServisneUsluge\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:33:12.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\ServisneUsluge\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\ServisneUsluge\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\ServisneUsluge\\Edit.cshtml",
+              "RelativeToolTip": "Views\\ServisneUsluge\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:33:55.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\ServisneUsluge\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\ServisneUsluge\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\ServisneUsluge\\Details.cshtml",
+              "RelativeToolTip": "Views\\ServisneUsluge\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:34:10.843Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\ServisneUsluge\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\ServisneUsluge\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\ServisneUsluge\\Delete.cshtml",
+              "RelativeToolTip": "Views\\ServisneUsluge\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:34:41.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-22T21:39:43.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Serviseri\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Serviseri\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Serviseri\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Serviseri\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:28:18.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Serviseri\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Serviseri\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Serviseri\\Details.cshtml",
+              "RelativeToolTip": "Views\\Serviseri\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:28:00.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Serviseri\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Serviseri\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Serviseri\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Serviseri\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:27:44.928Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Serviseri\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Serviseri\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Serviseri\\Create.cshtml",
+              "RelativeToolTip": "Views\\Serviseri\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:27:18.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Serviseri\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Serviseri\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Serviseri\\Index.cshtml",
+              "RelativeToolTip": "Views\\Serviseri\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAQAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:26:53.995Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Vozila\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vozila\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Vozila\\Details.cshtml",
+              "RelativeToolTip": "Views\\Vozila\\Details.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:21:13.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Vozila\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vozila\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Vozila\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Vozila\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:21:48.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Vozila\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vozila\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Vozila\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Vozila\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:20:55.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Vozila\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vozila\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Vozila\\Create.cshtml",
+              "RelativeToolTip": "Views\\Vozila\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:20:32.154Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Vozila\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Vozila\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Vozila\\Index.cshtml",
+              "RelativeToolTip": "Views\\Vozila\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:20:11.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "VozilaController.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Controllers\\VozilaController.cs",
+              "RelativeDocumentMoniker": "Controllers\\VozilaController.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Controllers\\VozilaController.cs",
+              "RelativeToolTip": "Controllers\\VozilaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-23T13:15:19.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Korisnici\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Korisnici\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Korisnici\\Details.cshtml",
+              "RelativeToolTip": "Views\\Korisnici\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:11:54.754Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Korisnici\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Korisnici\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Korisnici\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Korisnici\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:12:34.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Korisnici\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Korisnici\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Korisnici\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Korisnici\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:11:27.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Korisnici\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Korisnici\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\Views\\Korisnici\\Create.cshtml",
+              "RelativeToolTip": "Views\\Korisnici\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAwwBwAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-23T13:10:19.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "ZakaziTerminDto.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\DTOs\\ZakaziTerminDto.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Application\\DTOs\\ZakaziTerminDto.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\DTOs\\ZakaziTerminDto.cs",
+              "RelativeToolTip": "..\\AutoService.Application\\DTOs\\ZakaziTerminDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:33:59.533Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "IUnitOfWork.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\Repositories\\IUnitOfWork.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Application\\Repositories\\IUnitOfWork.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Application\\Repositories\\IUnitOfWork.cs",
+              "RelativeToolTip": "..\\AutoService.Application\\Repositories\\IUnitOfWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:24:59.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "20260622212244_PrviMigrationSaBazom.cs",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Migrations\\20260622212244_PrviMigrationSaBazom.cs",
+              "RelativeDocumentMoniker": "..\\AutoService.Infrastructure\\Migrations\\20260622212244_PrviMigrationSaBazom.cs",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\Migrations\\20260622212244_PrviMigrationSaBazom.cs",
+              "RelativeToolTip": "..\\AutoService.Infrastructure\\Migrations\\20260622212244_PrviMigrationSaBazom.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-22T21:22:44.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\Veljko_Cukanic_2022_0005\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-22T21:19:47.597Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "AutoService.Domain.csproj",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\AutoService.Domain.csproj",
+              "RelativeDocumentMoniker": "..\\AutoServis.Domain\\AutoService.Domain.csproj",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoServis.Domain\\AutoService.Domain.csproj",
+              "RelativeToolTip": "..\\AutoServis.Domain\\AutoService.Domain.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-22T21:07:42.1Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "AutoService.Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj",
+              "RelativeDocumentMoniker": "..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\Veljko\\Desktop\\Projekat .Net\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj",
+              "RelativeToolTip": "..\\AutoService.Infrastructure\\AutoService.Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-06-22T21:05:16.497Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
