@@ -28,3 +28,4 @@ namespace AutoService.Application.DTOs
         public bool Aktivna { get; set; } = true;
     }
 }
+

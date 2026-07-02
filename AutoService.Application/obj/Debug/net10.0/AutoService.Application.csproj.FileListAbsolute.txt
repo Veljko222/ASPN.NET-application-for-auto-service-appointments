@@ -13,3 +13,7 @@ C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\
 C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\ref\AutoService.Application.dll
 C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\bin\Debug\net10.0\AutoService.Domain.dll
 C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\bin\Debug\net10.0\AutoService.Domain.pdb
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Application\obj\Debug\net10.0\AutoService.Application.sourcelink.json
+C:\Users\Veljko\Desktop\Projekat .Net\tmp-build-output\AutoService.Application.deps.json
+C:\Users\Veljko\Desktop\Projekat .Net\tmp-build-output\AutoService.Application.dll
+C:\Users\Veljko\Desktop\Projekat .Net\tmp-build-output\AutoService.Application.pdb

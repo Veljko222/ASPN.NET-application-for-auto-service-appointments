@@ -17,3 +17,4 @@ namespace AutoService.Application.Repositories
         void Delete(T entity);
     }
 }
+

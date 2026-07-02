@@ -20,7 +20,7 @@ namespace AutoService.Infrastructure.Repositories
         {
             return DbSet
                 .Include(t => t.Vozilo)
-                    .ThenInclude(v => v.Korisnik)
+                    .ThenInclude(v => v.Vlasnik)
                 .Include(t => t.Serviser)
                 .Include(t => t.ServisnaUsluga);
         }
@@ -50,3 +50,4 @@ namespace AutoService.Infrastructure.Repositories
         }
     }
 }
+

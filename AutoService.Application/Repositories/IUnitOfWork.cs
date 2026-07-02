@@ -9,3 +9,4 @@ namespace AutoService.Application.Repositories
         Task<int> SaveChangesAsync();
     }
 }
+

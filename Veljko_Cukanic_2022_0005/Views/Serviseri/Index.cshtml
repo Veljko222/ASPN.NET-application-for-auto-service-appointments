@@ -71,6 +71,7 @@
                     <th>Ime</th>
                     <th>Prezime</th>
                     <th>Specijalizacija</th>
+                    <th>Admin</th>
                     <th>Status</th>
                     <th>Akcije</th>
                 </tr>
@@ -83,6 +84,9 @@
                         <td>@serviser.Ime</td>
                         <td>@serviser.Prezime</td>
                         <td>@serviser.Specijalizacija</td>
+                        <td>
+                            @(serviser.IsAdmin ? "Da" : "Ne")
+                        </td>
                         <td>
                             @if (serviser.Aktivan)
                             {

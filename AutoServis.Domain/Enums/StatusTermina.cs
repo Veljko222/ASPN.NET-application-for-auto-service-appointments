@@ -13,3 +13,4 @@ namespace AutoService.Domain.Enums
         Otkazan = 5
     }
 }
+

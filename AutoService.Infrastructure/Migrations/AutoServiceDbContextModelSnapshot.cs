@@ -22,13 +22,13 @@ namespace AutoService.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("AutoService.Domain.Models.Korisnik", b =>
+            modelBuilder.Entity("AutoService.Domain.Models.Vlasnik", b =>
                 {
-                    b.Property<int>("KorisnikId")
+                    b.Property<int>("VlasnikId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("KorisnikId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VlasnikId"));
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -40,6 +40,11 @@ namespace AutoService.Infrastructure.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
                     b.Property<string>("Prezime")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -50,12 +55,20 @@ namespace AutoService.Infrastructure.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.HasKey("KorisnikId");
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("VlasnikId");
 
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Korisnici", (string)null);
+                    b.HasIndex("UserName")
+                        .IsUnique();
+
+                    b.ToTable("Vlasnici", (string)null);
                 });
 
             modelBuilder.Entity("AutoService.Domain.Models.Serviser", b =>
@@ -71,10 +84,23 @@ namespace AutoService.Infrastructure.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(true);
 
+                    b.Property<string>("Email")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<string>("Ime")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("IsAdmin")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(false);
+
+                    b.Property<string>("PasswordHash")
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<string>("Prezime")
                         .IsRequired()
@@ -86,7 +112,19 @@ namespace AutoService.Infrastructure.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("UserName")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
                     b.HasKey("ServiserId");
+
+                    b.HasIndex("Email")
+                        .IsUnique()
+                        .HasFilter("[Email] IS NOT NULL");
+
+                    b.HasIndex("UserName")
+                        .IsUnique()
+                        .HasFilter("[UserName] IS NOT NULL");
 
                     b.ToTable("Serviseri", (string)null);
                 });
@@ -178,7 +216,7 @@ namespace AutoService.Infrastructure.Migrations
                     b.Property<int>("GodinaProizvodnje")
                         .HasColumnType("int");
 
-                    b.Property<int>("KorisnikId")
+                    b.Property<int>("VlasnikId")
                         .HasColumnType("int");
 
                     b.Property<string>("Marka")
@@ -198,7 +236,7 @@ namespace AutoService.Infrastructure.Migrations
 
                     b.HasKey("VoziloId");
 
-                    b.HasIndex("KorisnikId");
+                    b.HasIndex("VlasnikId");
 
                     b.HasIndex("Registracija")
                         .IsUnique();
@@ -235,16 +273,16 @@ namespace AutoService.Infrastructure.Migrations
 
             modelBuilder.Entity("AutoService.Domain.Models.Vozilo", b =>
                 {
-                    b.HasOne("AutoService.Domain.Models.Korisnik", "Korisnik")
+                    b.HasOne("AutoService.Domain.Models.Vlasnik", "Vlasnik")
                         .WithMany("Vozila")
-                        .HasForeignKey("KorisnikId")
+                        .HasForeignKey("VlasnikId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Korisnik");
+                    b.Navigation("Vlasnik");
                 });
 
-            modelBuilder.Entity("AutoService.Domain.Models.Korisnik", b =>
+            modelBuilder.Entity("AutoService.Domain.Models.Vlasnik", b =>
                 {
                     b.Navigation("Vozila");
                 });
@@ -267,3 +305,4 @@ namespace AutoService.Infrastructure.Migrations
         }
     }
 }
+

@@ -1,0 +1,61 @@
+﻿@model AutoService.Domain.Models.Vlasnik
+
+@{
+    ViewData["Title"] = "Detalji vlasnika";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header">
+            <h2>Detalji vlasnika</h2>
+        </div>
+
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3">Ime</dt>
+                <dd class="col-sm-9">@Model.Ime</dd>
+
+                <dt class="col-sm-3">Prezime</dt>
+                <dd class="col-sm-9">@Model.Prezime</dd>
+
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3">Telefon</dt>
+                <dd class="col-sm-9">@Model.Telefon</dd>
+            </dl>
+
+            <hr />
+
+            <h4>Vozila vlasnika</h4>
+
+            @if (!Model.Vozila.Any())
+            {
+                <p>Vlasnik nema evidentirana vozila.</p>
+            }
+            else
+            {
+                <ul class="list-group mb-3">
+                    @foreach (var vozilo in Model.Vozila)
+                    {
+                        <li class="list-group-item">
+                            @vozilo.Marka @vozilo.Model
+                            — @vozilo.Registracija
+                        </li>
+                    }
+                </ul>
+            }
+
+            <a asp-action="Edit"
+                   asp-route-id="@Model.VlasnikId"
+                   class="btn btn-warning">
+                Izmeni
+            </a>
+
+            <a asp-action="Index"
+                   class="btn btn-secondary">
+                Nazad
+            </a>
+        </div>
+    </div>
+</div>

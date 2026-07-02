@@ -12,10 +12,10 @@ namespace AutoService.Infrastructure.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Korisnici",
+                name: "Vlasnici",
                 columns: table => new
                 {
-                    KorisnikId = table.Column<int>(type: "int", nullable: false)
+                    VlasnikId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Ime = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Prezime = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
@@ -24,7 +24,7 @@ namespace AutoService.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Korisnici", x => x.KorisnikId);
+                    table.PrimaryKey("PK_Vlasnici", x => x.VlasnikId);
                 });
 
             migrationBuilder.CreateTable(
@@ -70,16 +70,16 @@ namespace AutoService.Infrastructure.Migrations
                     Model = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     GodinaProizvodnje = table.Column<int>(type: "int", nullable: false),
                     Registracija = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
-                    KorisnikId = table.Column<int>(type: "int", nullable: false)
+                    VlasnikId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Vozila", x => x.VoziloId);
                     table.ForeignKey(
-                        name: "FK_Vozila_Korisnici_KorisnikId",
-                        column: x => x.KorisnikId,
-                        principalTable: "Korisnici",
-                        principalColumn: "KorisnikId",
+                        name: "FK_Vozila_Vlasnici_VlasnikId",
+                        column: x => x.VlasnikId,
+                        principalTable: "Vlasnici",
+                        principalColumn: "VlasnikId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -120,8 +120,8 @@ namespace AutoService.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Korisnici_Email",
-                table: "Korisnici",
+                name: "IX_Vlasnici_Email",
+                table: "Vlasnici",
                 column: "Email",
                 unique: true);
 
@@ -141,9 +141,9 @@ namespace AutoService.Infrastructure.Migrations
                 column: "VoziloId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Vozila_KorisnikId",
+                name: "IX_Vozila_VlasnikId",
                 table: "Vozila",
-                column: "KorisnikId");
+                column: "VlasnikId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Vozila_Registracija",
@@ -168,7 +168,8 @@ namespace AutoService.Infrastructure.Migrations
                 name: "Vozila");
 
             migrationBuilder.DropTable(
-                name: "Korisnici");
+                name: "Vlasnici");
         }
     }
 }
+

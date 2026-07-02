@@ -17,3 +17,8 @@ C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Infrastructure\bin\Debug\net10
 C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Infrastructure\bin\Debug\net10.0\AutoService.Domain.dll
 C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Infrastructure\bin\Debug\net10.0\AutoService.Domain.pdb
 C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Infrastructure\obj\Debug\net10.0\AutoService.Infrastructure.genruntimeconfig.cache
+C:\Users\Veljko\Desktop\Projekat .Net\AutoService.Infrastructure\obj\Debug\net10.0\AutoService.Infrastructure.sourcelink.json
+C:\Users\Veljko\Desktop\Projekat .Net\tmp-build-output\AutoService.Infrastructure.deps.json
+C:\Users\Veljko\Desktop\Projekat .Net\tmp-build-output\AutoService.Infrastructure.runtimeconfig.json
+C:\Users\Veljko\Desktop\Projekat .Net\tmp-build-output\AutoService.Infrastructure.dll
+C:\Users\Veljko\Desktop\Projekat .Net\tmp-build-output\AutoService.Infrastructure.pdb

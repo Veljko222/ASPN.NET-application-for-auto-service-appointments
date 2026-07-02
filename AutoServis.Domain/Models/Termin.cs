@@ -28,3 +28,4 @@ namespace AutoService.Domain.Models
         public ServisnaUsluga ServisnaUsluga { get; set; } = null!;
     }
 }
+

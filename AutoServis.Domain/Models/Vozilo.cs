@@ -16,10 +16,11 @@ namespace AutoService.Domain.Models
 
         public string Registracija { get; set; } = string.Empty;
 
-        public int KorisnikId { get; set; }
+        public int VlasnikId { get; set; }
 
-        public Korisnik Korisnik { get; set; } = null!;
+        public Vlasnik Vlasnik { get; set; } = null!;
 
         public ICollection<Termin> Termini { get; set; } = new List<Termin>();
     }
 }
+

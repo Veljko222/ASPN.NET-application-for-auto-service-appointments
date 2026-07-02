@@ -1,4 +1,4 @@
-namespace Veljko_Cukanic_2022_0005.Models
+﻿namespace Veljko_Cukanic_2022_0005.Models
 {
     public class ErrorViewModel
     {
@@ -7,3 +7,4 @@ namespace Veljko_Cukanic_2022_0005.Models
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }
+

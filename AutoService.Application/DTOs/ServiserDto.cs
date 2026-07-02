@@ -22,5 +22,19 @@ namespace AutoService.Application.DTOs
         public string Specijalizacija { get; set; } = string.Empty;
 
         public bool Aktivan { get; set; } = true;
+
+        public bool IsAdmin { get; set; }
+
+        [MaxLength(50)]
+        public string? UserName { get; set; }
+
+        [EmailAddress(ErrorMessage = "Email nije u ispravnom formatu.")]
+        [MaxLength(100)]
+        public string? Email { get; set; }
+
+        [DataType(DataType.Password)]
+        [MinLength(6, ErrorMessage = "Lozinka mora imati najmanje 6 karaktera.")]
+        public string? Password { get; set; }
     }
 }
+

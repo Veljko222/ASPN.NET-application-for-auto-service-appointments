@@ -61,8 +61,8 @@
                         </td>
 
                         <td>
-                            @termin.Vozilo.Korisnik.Ime
-                            @termin.Vozilo.Korisnik.Prezime
+                            @termin.Vozilo.Vlasnik.Ime
+                            @termin.Vozilo.Vlasnik.Prezime
                         </td>
 
                         <td>
@@ -83,16 +83,19 @@
                                  termin.Status != AutoService.Domain.Enums.StatusTermina.Zavrsen)
                             {
                                 <div class="d-flex gap-2">
-                                    <form asp-controller="Termini"
-                                          asp-action="Zavrsi"
-                                          asp-route-id="@termin.TerminId"
-                                          method="post">
+                                    @if (User.IsInRole("Admin"))
+                                    {
+                                        <form asp-controller="Termini"
+                                              asp-action="Zavrsi"
+                                              asp-route-id="@termin.TerminId"
+                                              method="post">
 
-                                        <button type="submit"
-                                                class="btn btn-success btn-sm">
-                                            Završi
-                                        </button>
-                                    </form>
+                                            <button type="submit"
+                                                    class="btn btn-success btn-sm">
+                                                Završi
+                                            </button>
+                                        </form>
+                                    }
 
                                     <form asp-controller="Termini"
                                           asp-action="Otkazi"
@@ -120,3 +123,4 @@
         </table>
     }
 </div>
+

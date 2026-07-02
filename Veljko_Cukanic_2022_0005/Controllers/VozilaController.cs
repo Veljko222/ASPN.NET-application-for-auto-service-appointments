@@ -1,47 +1,28 @@
 ﻿using AutoService.Application.DTOs;
-using AutoService.Application.Repositories;
-using AutoService.Domain.Models;
+using AutoService.Application.Mediator;
+using AutoService.Application.Vozila.Commands;
+using AutoService.Application.Vozila.Queries;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace AutoService.Web.Controllers
 {
+    [Authorize(Roles = "Admin,User")]
     public class VozilaController : Controller
     {
-        private readonly IRepository<Vozilo> _voziloRepository;
-        private readonly IRepository<Korisnik> _korisnikRepository;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMediator _mediator;
 
-        public VozilaController(
-            IRepository<Vozilo> voziloRepository,
-            IRepository<Korisnik> korisnikRepository,
-            IUnitOfWork unitOfWork)
+        public VozilaController(IMediator mediator)
         {
-            _voziloRepository = voziloRepository;
-            _korisnikRepository = korisnikRepository;
-            _unitOfWork = unitOfWork;
+            _mediator = mediator;
         }
 
         public async Task<IActionResult> Index(string? pretraga)
         {
-            IQueryable<Vozilo> query = _voziloRepository
-    .GetAll()
-    .Include(v => v.Korisnik);
-            if (!string.IsNullOrWhiteSpace(pretraga))
-            {
-                query = query.Where(v =>
-                    v.Marka.Contains(pretraga) ||
-                    v.Model.Contains(pretraga) ||
-                    v.Registracija.Contains(pretraga) ||
-                    v.Korisnik.Ime.Contains(pretraga) ||
-                    v.Korisnik.Prezime.Contains(pretraga));
-            }
-
-            var vozila = await query
-                .OrderBy(v => v.Marka)
-                .ThenBy(v => v.Model)
-                .ToListAsync();
+            var vozila = await _mediator.Send(
+                new GetVozilaQuery(pretraga, GetVlasnikId(), User.IsInRole("Admin")));
 
             ViewBag.Pretraga = pretraga;
 
@@ -51,10 +32,11 @@ namespace AutoService.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            await PopuniKorisnike();
+            await PopuniVlasnike();
 
             return View(new VoziloDto
             {
+                VlasnikId = GetVlasnikId() ?? 0,
                 GodinaProizvodnje = DateTime.Now.Year
             });
         }
@@ -65,82 +47,43 @@ namespace AutoService.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                await PopuniKorisnike(dto.KorisnikId);
+                await PopuniVlasnike(dto.VlasnikId);
                 return View(dto);
             }
 
-            bool korisnikPostoji = await _korisnikRepository
-                .GetAll()
-                .AnyAsync(k => k.KorisnikId == dto.KorisnikId);
-
-            if (!korisnikPostoji)
+            try
             {
-                ModelState.AddModelError(
-                    nameof(dto.KorisnikId),
-                    "Izabrani korisnik ne postoji.");
+                await _mediator.Send(new CreateVoziloCommand(
+                    dto,
+                    GetVlasnikId(),
+                    User.IsInRole("Admin")));
+                TempData["Uspeh"] = "Vozilo je uspeÅ¡no dodato.";
 
-                await PopuniKorisnike(dto.KorisnikId);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (InvalidOperationException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+                await PopuniVlasnike(dto.VlasnikId);
 
                 return View(dto);
             }
-
-            string registracija = dto.Registracija
-                .Trim()
-                .ToUpperInvariant();
-
-            bool registracijaPostoji = await _voziloRepository
-                .GetAll()
-                .AnyAsync(v => v.Registracija == registracija);
-
-            if (registracijaPostoji)
-            {
-                ModelState.AddModelError(
-                    nameof(dto.Registracija),
-                    "Vozilo sa ovom registracijom već postoji.");
-
-                await PopuniKorisnike(dto.KorisnikId);
-
-                return View(dto);
-            }
-
-            var vozilo = new Vozilo
-            {
-                Marka = dto.Marka.Trim(),
-                Model = dto.Model.Trim(),
-                GodinaProizvodnje = dto.GodinaProizvodnje,
-                Registracija = registracija,
-                KorisnikId = dto.KorisnikId
-            };
-
-            await _voziloRepository.AddAsync(vozilo);
-            await _unitOfWork.SaveChangesAsync();
-
-            TempData["Uspeh"] = "Vozilo je uspešno dodato.";
-
-            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var vozilo = await _voziloRepository.GetByIdAsync(id);
+            var dto = await _mediator.Send(new GetVoziloEditQuery(
+                id,
+                GetVlasnikId(),
+                User.IsInRole("Admin")));
 
-            if (vozilo == null)
+            if (dto == null)
             {
                 return NotFound();
             }
 
-            var dto = new VoziloDto
-            {
-                VoziloId = vozilo.VoziloId,
-                Marka = vozilo.Marka,
-                Model = vozilo.Model,
-                GodinaProizvodnje = vozilo.GodinaProizvodnje,
-                Registracija = vozilo.Registracija,
-                KorisnikId = vozilo.KorisnikId
-            };
-
-            await PopuniKorisnike(dto.KorisnikId);
+            await PopuniVlasnike(dto.VlasnikId);
 
             return View(dto);
         }
@@ -151,77 +94,34 @@ namespace AutoService.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                await PopuniKorisnike(dto.KorisnikId);
+                await PopuniVlasnike(dto.VlasnikId);
                 return View(dto);
             }
 
-            var vozilo = await _voziloRepository
-                .GetByIdAsync(dto.VoziloId);
-
-            if (vozilo == null)
+            try
             {
-                return NotFound();
+                await _mediator.Send(new UpdateVoziloCommand(
+                    dto,
+                    GetVlasnikId(),
+                    User.IsInRole("Admin")));
+                TempData["Uspeh"] = "Vozilo je uspeÅ¡no izmenjeno.";
+
+                return RedirectToAction(nameof(Index));
             }
-
-            bool korisnikPostoji = await _korisnikRepository
-                .GetAll()
-                .AnyAsync(k => k.KorisnikId == dto.KorisnikId);
-
-            if (!korisnikPostoji)
+            catch (InvalidOperationException ex)
             {
-                ModelState.AddModelError(
-                    nameof(dto.KorisnikId),
-                    "Izabrani korisnik ne postoji.");
-
-                await PopuniKorisnike(dto.KorisnikId);
+                ModelState.AddModelError(string.Empty, ex.Message);
+                await PopuniVlasnike(dto.VlasnikId);
 
                 return View(dto);
             }
-
-            string registracija = dto.Registracija
-                .Trim()
-                .ToUpperInvariant();
-
-            bool registracijaPostoji = await _voziloRepository
-                .GetAll()
-                .AnyAsync(v =>
-                    v.Registracija == registracija &&
-                    v.VoziloId != dto.VoziloId);
-
-            if (registracijaPostoji)
-            {
-                ModelState.AddModelError(
-                    nameof(dto.Registracija),
-                    "Drugo vozilo već koristi ovu registraciju.");
-
-                await PopuniKorisnike(dto.KorisnikId);
-
-                return View(dto);
-            }
-
-            vozilo.Marka = dto.Marka.Trim();
-            vozilo.Model = dto.Model.Trim();
-            vozilo.GodinaProizvodnje = dto.GodinaProizvodnje;
-            vozilo.Registracija = registracija;
-            vozilo.KorisnikId = dto.KorisnikId;
-
-            _voziloRepository.Update(vozilo);
-            await _unitOfWork.SaveChangesAsync();
-
-            TempData["Uspeh"] = "Vozilo je uspešno izmenjeno.";
-
-            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
-            var vozilo = await _voziloRepository
-                .GetAll()
-                .Include(v => v.Korisnik)
-                .Include(v => v.Termini)
-                    .ThenInclude(t => t.ServisnaUsluga)
-                .FirstOrDefaultAsync(v => v.VoziloId == id);
+            var vozilo = await _mediator.Send(
+                new GetVoziloDetailsQuery(id, GetVlasnikId(), User.IsInRole("Admin")));
 
             if (vozilo == null)
             {
@@ -234,11 +134,8 @@ namespace AutoService.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            var vozilo = await _voziloRepository
-                .GetAll()
-                .Include(v => v.Korisnik)
-                .Include(v => v.Termini)
-                .FirstOrDefaultAsync(v => v.VoziloId == id);
+            var vozilo = await _mediator.Send(
+                new GetVoziloDeleteQuery(id, GetVlasnikId(), User.IsInRole("Admin")));
 
             if (vozilo == null)
             {
@@ -252,50 +149,53 @@ namespace AutoService.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var vozilo = await _voziloRepository
-                .GetAll()
-                .Include(v => v.Termini)
-                .FirstOrDefaultAsync(v => v.VoziloId == id);
-
-            if (vozilo == null)
+            try
             {
-                return NotFound();
+                await _mediator.Send(new DeleteVoziloCommand(
+                    id,
+                    GetVlasnikId(),
+                    User.IsInRole("Admin")));
+                TempData["Uspeh"] = "Vozilo je uspeÅ¡no obrisano.";
             }
-
-            if (vozilo.Termini.Any())
+            catch (InvalidOperationException ex)
             {
-                TempData["Greska"] =
-                    "Vozilo ne može biti obrisano jer ima evidentirane termine.";
-
-                return RedirectToAction(nameof(Index));
+                TempData["Greska"] = ex.Message;
             }
-
-            _voziloRepository.Delete(vozilo);
-            await _unitOfWork.SaveChangesAsync();
-
-            TempData["Uspeh"] = "Vozilo je uspešno obrisano.";
 
             return RedirectToAction(nameof(Index));
         }
 
-        private async Task PopuniKorisnike(int? izabraniKorisnikId = null)
+        private async Task PopuniVlasnike(int? izabraniVlasnikId = null)
         {
-            var korisnici = await _korisnikRepository
-                .GetAll()
-                .OrderBy(k => k.Prezime)
-                .ThenBy(k => k.Ime)
-                .Select(k => new
-                {
-                    k.KorisnikId,
-                    PunoIme = k.Ime + " " + k.Prezime
-                })
-                .ToListAsync();
+            ViewBag.IsAdmin = User.IsInRole("Admin");
 
-            ViewBag.Korisnici = new SelectList(
-                korisnici,
-                "KorisnikId",
+            if (!User.IsInRole("Admin"))
+            {
+                return;
+            }
+
+            var vlasnici = await _mediator.Send(
+                new GetVlasniciZaVoziloQuery());
+
+            ViewBag.Vlasnici = new SelectList(
+                vlasnici.Select(k => new
+                {
+                    k.VlasnikId,
+                    PunoIme = k.Ime + " " + k.Prezime
+                }),
+                "VlasnikId",
                 "PunoIme",
-                izabraniKorisnikId);
+                izabraniVlasnikId);
+        }
+
+        private int? GetVlasnikId()
+        {
+            string? id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            return int.TryParse(id, out int vlasnikId)
+                ? vlasnikId
+                : null;
         }
     }
 }
+

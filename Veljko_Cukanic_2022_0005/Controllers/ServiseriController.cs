@@ -1,47 +1,28 @@
 ﻿using AutoService.Application.DTOs;
-using AutoService.Application.Repositories;
-using AutoService.Domain.Models;
+using AutoService.Application.Mediator;
+using AutoService.Application.Serviseri.Commands;
+using AutoService.Application.Serviseri.Queries;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace AutoService.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ServiseriController : Controller
     {
-        private readonly IRepository<Serviser> _serviserRepository;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMediator _mediator;
 
-        public ServiseriController(
-            IRepository<Serviser> serviserRepository,
-            IUnitOfWork unitOfWork)
+        public ServiseriController(IMediator mediator)
         {
-            _serviserRepository = serviserRepository;
-            _unitOfWork = unitOfWork;
+            _mediator = mediator;
         }
 
         public async Task<IActionResult> Index(
             string? pretraga,
             bool? aktivan)
         {
-            IQueryable<Serviser> query = _serviserRepository.GetAll();
-
-            if (!string.IsNullOrWhiteSpace(pretraga))
-            {
-                query = query.Where(s =>
-                    s.Ime.Contains(pretraga) ||
-                    s.Prezime.Contains(pretraga) ||
-                    s.Specijalizacija.Contains(pretraga));
-            }
-
-            if (aktivan.HasValue)
-            {
-                query = query.Where(s => s.Aktivan == aktivan.Value);
-            }
-
-            var serviseri = await query
-                .OrderBy(s => s.Prezime)
-                .ThenBy(s => s.Ime)
-                .ToListAsync();
+            var serviseri = await _mediator.Send(
+                new GetServiseriQuery(pretraga, aktivan));
 
             ViewBag.Pretraga = pretraga;
             ViewBag.Aktivan = aktivan;
@@ -67,18 +48,8 @@ namespace AutoService.Web.Controllers
                 return View(dto);
             }
 
-            var serviser = new Serviser
-            {
-                Ime = dto.Ime.Trim(),
-                Prezime = dto.Prezime.Trim(),
-                Specijalizacija = dto.Specijalizacija.Trim(),
-                Aktivan = dto.Aktivan
-            };
-
-            await _serviserRepository.AddAsync(serviser);
-            await _unitOfWork.SaveChangesAsync();
-
-            TempData["Uspeh"] = "Serviser je uspešno dodat.";
+            await _mediator.Send(new CreateServiserCommand(dto));
+            TempData["Uspeh"] = "Serviser je uspeÅ¡no dodat.";
 
             return RedirectToAction(nameof(Index));
         }
@@ -86,21 +57,12 @@ namespace AutoService.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var serviser = await _serviserRepository.GetByIdAsync(id);
+            var dto = await _mediator.Send(new GetServiserEditQuery(id));
 
-            if (serviser == null)
+            if (dto == null)
             {
                 return NotFound();
             }
-
-            var dto = new ServiserDto
-            {
-                ServiserId = serviser.ServiserId,
-                Ime = serviser.Ime,
-                Prezime = serviser.Prezime,
-                Specijalizacija = serviser.Specijalizacija,
-                Aktivan = serviser.Aktivan
-            };
 
             return View(dto);
         }
@@ -114,37 +76,25 @@ namespace AutoService.Web.Controllers
                 return View(dto);
             }
 
-            var serviser = await _serviserRepository
-                .GetByIdAsync(dto.ServiserId);
-
-            if (serviser == null)
+            try
             {
-                return NotFound();
+                await _mediator.Send(new UpdateServiserCommand(dto));
+                TempData["Uspeh"] = "Serviser je uspeÅ¡no izmenjen.";
+
+                return RedirectToAction(nameof(Index));
             }
-
-            serviser.Ime = dto.Ime.Trim();
-            serviser.Prezime = dto.Prezime.Trim();
-            serviser.Specijalizacija = dto.Specijalizacija.Trim();
-            serviser.Aktivan = dto.Aktivan;
-
-            _serviserRepository.Update(serviser);
-            await _unitOfWork.SaveChangesAsync();
-
-            TempData["Uspeh"] = "Serviser je uspešno izmenjen.";
-
-            return RedirectToAction(nameof(Index));
+            catch (InvalidOperationException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
+                return View(dto);
+            }
         }
 
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
-            var serviser = await _serviserRepository
-                .GetAll()
-                .Include(s => s.Termini)
-                    .ThenInclude(t => t.Vozilo)
-                .Include(s => s.Termini)
-                    .ThenInclude(t => t.ServisnaUsluga)
-                .FirstOrDefaultAsync(s => s.ServiserId == id);
+            var serviser = await _mediator.Send(
+                new GetServiserDetailsQuery(id));
 
             if (serviser == null)
             {
@@ -157,10 +107,8 @@ namespace AutoService.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            var serviser = await _serviserRepository
-                .GetAll()
-                .Include(s => s.Termini)
-                .FirstOrDefaultAsync(s => s.ServiserId == id);
+            var serviser = await _mediator.Send(
+                new GetServiserDeleteQuery(id));
 
             if (serviser == null)
             {
@@ -174,35 +122,18 @@ namespace AutoService.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var serviser = await _serviserRepository
-                .GetAll()
-                .Include(s => s.Termini)
-                .FirstOrDefaultAsync(s => s.ServiserId == id);
-
-            if (serviser == null)
+            try
             {
-                return NotFound();
+                await _mediator.Send(new DeleteServiserCommand(id));
+                TempData["Uspeh"] = "Serviser je uspeÅ¡no obraÄ‘en.";
             }
-
-            if (serviser.Termini.Any())
+            catch (InvalidOperationException ex)
             {
-                serviser.Aktivan = false;
-
-                _serviserRepository.Update(serviser);
-                await _unitOfWork.SaveChangesAsync();
-
-                TempData["Uspeh"] =
-                    "Serviser ima termine, pa je deaktiviran umesto obrisan.";
-
-                return RedirectToAction(nameof(Index));
+                TempData["Greska"] = ex.Message;
             }
-
-            _serviserRepository.Delete(serviser);
-            await _unitOfWork.SaveChangesAsync();
-
-            TempData["Uspeh"] = "Serviser je uspešno obrisan.";
 
             return RedirectToAction(nameof(Index));
         }
     }
 }
+

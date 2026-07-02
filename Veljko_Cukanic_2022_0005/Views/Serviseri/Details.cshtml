@@ -26,6 +26,24 @@
                 <dd class="col-sm-9">
                     @(Model.Aktivan ? "Aktivan" : "Neaktivan")
                 </dd>
+
+                <dt class="col-sm-3">Admin</dt>
+                <dd class="col-sm-9">
+                    @(Model.IsAdmin ? "Da" : "Ne")
+                </dd>
+
+                @if (Model.IsAdmin)
+                {
+                    <dt class="col-sm-3">Korisnicko ime</dt>
+                    <dd class="col-sm-9">
+                        @Model.UserName
+                    </dd>
+
+                    <dt class="col-sm-3">Email</dt>
+                    <dd class="col-sm-9">
+                        @Model.Email
+                    </dd>
+                }
             </dl>
 
             <hr />
@@ -85,3 +103,4 @@
         </div>
     </div>
 </div>
+

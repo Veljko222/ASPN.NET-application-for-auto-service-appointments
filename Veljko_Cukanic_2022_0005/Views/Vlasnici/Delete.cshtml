@@ -1,0 +1,54 @@
+﻿@model AutoService.Domain.Models.Vlasnik
+
+@{
+    ViewData["Title"] = "Brisanje vlasnika";
+}
+
+<div class="container mt-4">
+    <div class="card border-danger shadow">
+        <div class="card-header bg-danger text-white">
+            <h2>Brisanje vlasnika</h2>
+        </div>
+
+        <div class="card-body">
+            <p>
+                Da li ste sigurni da želite da obrišete vlasnika?
+            </p>
+
+            <dl class="row">
+                <dt class="col-sm-3">Ime i prezime</dt>
+                <dd class="col-sm-9">
+                    @Model.Ime @Model.Prezime
+                </dd>
+
+                <dt class="col-sm-3">Email</dt>
+                <dd class="col-sm-9">@Model.Email</dd>
+
+                <dt class="col-sm-3">Broj vozila</dt>
+                <dd class="col-sm-9">@Model.Vozila.Count</dd>
+            </dl>
+
+            @if (Model.Vozila.Any())
+            {
+                <div class="alert alert-warning">
+                    Ovaj vlasnik ima vozila i neće moći da bude obrisan.
+                </div>
+            }
+
+            <form asp-action="DeleteConfirmed"
+                  asp-route-id="@Model.VlasnikId"
+                  method="post">
+
+                <button type="submit"
+                        class="btn btn-danger">
+                    Potvrdi brisanje
+                </button>
+
+                <a asp-action="Index"
+                       class="btn btn-secondary">
+                    Odustani
+                </a>
+            </form>
+        </div>
+    </div>
+</div>

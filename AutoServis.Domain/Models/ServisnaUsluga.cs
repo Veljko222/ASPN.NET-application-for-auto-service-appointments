@@ -21,3 +21,4 @@ namespace AutoService.Domain.Models
         public ICollection<Termin> Termini { get; set; } = new List<Termin>();
     }
 }
+

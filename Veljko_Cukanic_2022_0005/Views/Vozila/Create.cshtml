@@ -48,19 +48,26 @@
                           class="text-danger"></span>
                 </div>
 
-                <div class="mb-3">
-                    <label asp-for="KorisnikId"
-                           class="form-label"></label>
+                @if (ViewBag.IsAdmin == true)
+                {
+                    <div class="mb-3">
+                        <label asp-for="VlasnikId"
+                               class="form-label"></label>
 
-                    <select asp-for="KorisnikId"
-                            asp-items="ViewBag.Korisnici"
-                            class="form-select">
-                        <option value="">Izaberite vlasnika</option>
-                    </select>
+                        <select asp-for="VlasnikId"
+                                asp-items="ViewBag.Vlasnici"
+                                class="form-select">
+                            <option value="">Izaberite vlasnika</option>
+                        </select>
 
-                    <span asp-validation-for="KorisnikId"
-                          class="text-danger"></span>
-                </div>
+                        <span asp-validation-for="VlasnikId"
+                              class="text-danger"></span>
+                    </div>
+                }
+                else
+                {
+                    <input asp-for="VlasnikId" type="hidden" />
+                }
 
                 <button type="submit" class="btn btn-primary">
                     Sačuvaj

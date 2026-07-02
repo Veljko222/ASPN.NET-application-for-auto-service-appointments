@@ -29,6 +29,27 @@ namespace AutoService.Infrastructure.Configuration
 
             builder.Property(s => s.Aktivan)
                 .HasDefaultValue(true);
+
+            builder.Property(s => s.IsAdmin)
+                .HasDefaultValue(false);
+
+            builder.Property(s => s.UserName)
+                .HasMaxLength(50);
+
+            builder.Property(s => s.Email)
+                .HasMaxLength(100);
+
+            builder.Property(s => s.PasswordHash)
+                .HasMaxLength(500);
+
+            builder.HasIndex(s => s.UserName)
+                .IsUnique()
+                .HasFilter("[UserName] IS NOT NULL");
+
+            builder.HasIndex(s => s.Email)
+                .IsUnique()
+                .HasFilter("[Email] IS NOT NULL");
         }
     }
 }
+

@@ -9,3 +9,7 @@ C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\AutoSe
 C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\refint\AutoService.Domain.dll
 C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\AutoService.Domain.pdb
 C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\ref\AutoService.Domain.dll
+C:\Users\Veljko\Desktop\Projekat .Net\AutoServis.Domain\obj\Debug\net10.0\AutoService.Domain.sourcelink.json
+C:\Users\Veljko\Desktop\Projekat .Net\tmp-build-output\AutoService.Domain.deps.json
+C:\Users\Veljko\Desktop\Projekat .Net\tmp-build-output\AutoService.Domain.dll
+C:\Users\Veljko\Desktop\Projekat .Net\tmp-build-output\AutoService.Domain.pdb

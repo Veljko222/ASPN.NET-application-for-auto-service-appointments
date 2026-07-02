@@ -27,3 +27,4 @@ namespace AutoService.Application.DTOs
         public string Napomena { get; set; } = string.Empty;
     }
 }
+

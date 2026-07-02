@@ -1,47 +1,29 @@
 ﻿using AutoService.Application.DTOs;
-using AutoService.Application.Repositories;
-using AutoService.Application.SystemOperations;
+using AutoService.Application.Mediator;
+using AutoService.Application.Termini.Commands;
+using AutoService.Application.Termini.Queries;
 using AutoService.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace AutoService.Web.Controllers
 {
+    [Authorize(Roles = "Admin,User")]
     public class TerminiController : Controller
     {
-        private readonly ITerminRepository _terminRepository;
-        private readonly IRepository<Vozilo> _voziloRepository;
-        private readonly IRepository<Serviser> _serviserRepository;
-        private readonly IRepository<ServisnaUsluga> _uslugaRepository;
-        private readonly ZakaziTerminOperation _zakaziTerminOperation;
-        private readonly OtkaziTerminOperation _otkaziTerminOperation;
-        private readonly ZavrsiTerminOperation _zavrsiTerminOperation;
+        private readonly IMediator _mediator;
 
-        public TerminiController(
-         ITerminRepository terminRepository,
-    IRepository<Vozilo> voziloRepository,
-    IRepository<Serviser> serviserRepository,
-    IRepository<ServisnaUsluga> uslugaRepository,
-    ZakaziTerminOperation zakaziTerminOperation,
-    OtkaziTerminOperation otkaziTerminOperation,
-    ZavrsiTerminOperation zavrsiTerminOperation)
+        public TerminiController(IMediator mediator)
         {
-            _terminRepository = terminRepository;
-            _voziloRepository = voziloRepository;
-            _serviserRepository = serviserRepository;
-            _uslugaRepository = uslugaRepository;
-            _zakaziTerminOperation = zakaziTerminOperation;
-            _otkaziTerminOperation = otkaziTerminOperation;
-            _zavrsiTerminOperation = zavrsiTerminOperation;
+            _mediator = mediator;
         }
 
         public async Task<IActionResult> Index()
         {
-            var termini = await _terminRepository
-                .GetAllWithDetails()
-                .OrderBy(t => t.DatumIVreme)
-                .ToListAsync();
+            var termini = await _mediator.Send(
+                new GetTerminiQuery(GetVlasnikId(), User.IsInRole("Admin")));
 
             return View(termini);
         }
@@ -83,16 +65,17 @@ namespace AutoService.Web.Controllers
 
             try
             {
-                await _zakaziTerminOperation.ExecuteAsync(termin);
-
-                TempData["Uspeh"] = "Termin je uspešno zakazan.";
+                await _mediator.Send(new ZakaziTerminCommand(
+                    termin,
+                    GetVlasnikId(),
+                    User.IsInRole("Admin")));
+                TempData["Uspeh"] = "Termin je uspeÅ¡no zakazan.";
 
                 return RedirectToAction(nameof(Index));
             }
             catch (InvalidOperationException ex)
             {
                 ModelState.AddModelError(string.Empty, ex.Message);
-
                 await PopuniListe();
 
                 return View(dto);
@@ -105,9 +88,11 @@ namespace AutoService.Web.Controllers
         {
             try
             {
-                await _otkaziTerminOperation.ExecuteAsync(id);
-
-                TempData["Uspeh"] = "Termin je uspešno otkazan.";
+                await _mediator.Send(new OtkaziTerminCommand(
+                    id,
+                    GetVlasnikId(),
+                    User.IsInRole("Admin")));
+                TempData["Uspeh"] = "Termin je uspeÅ¡no otkazan.";
             }
             catch (InvalidOperationException ex)
             {
@@ -119,13 +104,13 @@ namespace AutoService.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Zavrsi(int id)
         {
             try
             {
-                await _zavrsiTerminOperation.ExecuteAsync(id);
-
-                TempData["Uspeh"] = "Termin je uspešno označen kao završen.";
+                await _mediator.Send(new ZavrsiTerminCommand(id));
+                TempData["Uspeh"] = "Termin je uspeÅ¡no oznaÄen kao zavrÅ¡en.";
             }
             catch (InvalidOperationException ex)
             {
@@ -137,24 +122,10 @@ namespace AutoService.Web.Controllers
 
         private async Task PopuniListe()
         {
-            var vozila = await _voziloRepository
-                .GetAll()
-                .OrderBy(v => v.Marka)
-                .ThenBy(v => v.Model)
-                .ToListAsync();
-
-            var serviseri = await _serviserRepository
-                .GetAll()
-                .Where(s => s.Aktivan)
-                .OrderBy(s => s.Ime)
-                .ThenBy(s => s.Prezime)
-                .ToListAsync();
-
-            var usluge = await _uslugaRepository
-                .GetAll()
-                .Where(u => u.Aktivna)
-                .OrderBy(u => u.Naziv)
-                .ToListAsync();
+            var vozila = await _mediator.Send(
+                new GetVozilaZaTerminQuery(GetVlasnikId(), User.IsInRole("Admin")));
+            var serviseri = await _mediator.Send(new GetServiseriZaTerminQuery());
+            var usluge = await _mediator.Send(new GetUslugeZaTerminQuery());
 
             ViewBag.Vozila = new SelectList(
                 vozila,
@@ -179,5 +150,15 @@ namespace AutoService.Web.Controllers
                 "ServisnaUslugaId",
                 "Prikaz");
         }
+
+        private int? GetVlasnikId()
+        {
+            string? id = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            return int.TryParse(id, out int vlasnikId)
+                ? vlasnikId
+                : null;
+        }
     }
 }
+

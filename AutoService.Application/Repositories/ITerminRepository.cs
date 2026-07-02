@@ -20,3 +20,4 @@ namespace AutoService.Application.Repositories
             int? terminId = null);
     }
 }
+

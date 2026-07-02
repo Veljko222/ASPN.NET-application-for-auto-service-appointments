@@ -28,6 +28,7 @@ namespace AutoService.Application.DTOs
 
         [Required(ErrorMessage = "Izaberite vlasnika vozila.")]
         [Display(Name = "Vlasnik")]
-        public int KorisnikId { get; set; }
+        public int VlasnikId { get; set; }
     }
 }
+

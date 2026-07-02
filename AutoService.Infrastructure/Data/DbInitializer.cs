@@ -1,42 +1,49 @@
-﻿using AutoService.Domain.Models;
+﻿using AutoService.Application.Auth;
+using AutoService.Domain.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AutoService.Infrastructure.Data
 {
     public static class DbInitializer
     {
         public static async Task InitializeAsync(
-            AutoServiceDbContext context)
+            AutoServiceDbContext context,
+            IPasswordHasher passwordHasher)
         {
             await context.Database.MigrateAsync();
 
-            if (await context.Korisnici.AnyAsync())
+            await EnsureServiserAdminColumnsAsync(context);
+            await EnsureAdminServiserAsync(context, passwordHasher);
+            await EnsureVlasnikLoginsAsync(context, passwordHasher);
+
+            if (await context.Vlasnici.AnyAsync())
             {
                 return;
             }
 
-            var korisnik1 = new Korisnik
+            var vlasnik1 = new Vlasnik
             {
                 Ime = "Marko",
-                Prezime = "Marković",
+                Prezime = "MarkoviÄ‡",
                 Email = "marko@gmail.com",
-                Telefon = "061111111"
+                Telefon = "061111111",
+                UserName = "marko",
+                PasswordHash = passwordHasher.Hash("Marko123!")
             };
 
-            var korisnik2 = new Korisnik
+            var vlasnik2 = new Vlasnik
             {
                 Ime = "Jovan",
-                Prezime = "Jovanović",
+                Prezime = "JovanoviÄ‡",
                 Email = "jovan@gmail.com",
-                Telefon = "062222222"
+                Telefon = "062222222",
+                UserName = "jovan",
+                PasswordHash = passwordHasher.Hash("Jovan123!")
             };
 
-            await context.Korisnici.AddRangeAsync(
-                korisnik1,
-                korisnik2);
+            await context.Vlasnici.AddRangeAsync(
+                vlasnik1,
+                vlasnik2);
 
             await context.SaveChangesAsync();
 
@@ -48,7 +55,7 @@ namespace AutoService.Infrastructure.Data
                     Model = "Golf 7",
                     GodinaProizvodnje = 2017,
                     Registracija = "PA-123-AA",
-                    KorisnikId = korisnik1.KorisnikId
+                    VlasnikId = vlasnik1.VlasnikId
                 },
                 new Vozilo
                 {
@@ -56,7 +63,7 @@ namespace AutoService.Infrastructure.Data
                     Model = "320d",
                     GodinaProizvodnje = 2019,
                     Registracija = "BG-456-BB",
-                    KorisnikId = korisnik2.KorisnikId
+                    VlasnikId = vlasnik2.VlasnikId
                 }
             };
 
@@ -64,15 +71,8 @@ namespace AutoService.Infrastructure.Data
             {
                 new Serviser
                 {
-                    Ime = "Nikola",
-                    Prezime = "Nikolić",
-                    Specijalizacija = "Mehanika",
-                    Aktivan = true
-                },
-                new Serviser
-                {
                     Ime = "Milan",
-                    Prezime = "Milić",
+                    Prezime = "MiliÄ‡",
                     Specijalizacija = "Auto-elektrika",
                     Aktivan = true
                 }
@@ -91,7 +91,7 @@ namespace AutoService.Infrastructure.Data
                 new ServisnaUsluga
                 {
                     Naziv = "Veliki servis",
-                    Opis = "Zamena zupčastog kaiša i pratećih delova.",
+                    Opis = "Zamena zupÄastog kaiÅ¡a i prateÄ‡ih delova.",
                     Cena = 45000,
                     TrajanjeUMinutima = 180,
                     Aktivna = true
@@ -99,15 +99,15 @@ namespace AutoService.Infrastructure.Data
                 new ServisnaUsluga
                 {
                     Naziv = "Dijagnostika",
-                    Opis = "Računarska dijagnostika vozila.",
+                    Opis = "RaÄunarska dijagnostika vozila.",
                     Cena = 3000,
                     TrajanjeUMinutima = 30,
                     Aktivna = true
                 },
                 new ServisnaUsluga
                 {
-                    Naziv = "Zamena kočionih pločica",
-                    Opis = "Zamena prednjih ili zadnjih pločica.",
+                    Naziv = "Zamena koÄionih ploÄica",
+                    Opis = "Zamena prednjih ili zadnjih ploÄica.",
                     Cena = 8000,
                     TrajanjeUMinutima = 60,
                     Aktivna = true
@@ -120,5 +120,116 @@ namespace AutoService.Infrastructure.Data
 
             await context.SaveChangesAsync();
         }
+
+        private static async Task EnsureServiserAdminColumnsAsync(
+            AutoServiceDbContext context)
+        {
+            await context.Database.ExecuteSqlRawAsync(@"
+IF COL_LENGTH('Serviseri', 'IsAdmin') IS NULL
+BEGIN
+    ALTER TABLE [Serviseri] ADD [IsAdmin] bit NOT NULL CONSTRAINT [DF_Serviseri_IsAdmin] DEFAULT CAST(0 AS bit);
+END");
+
+            await context.Database.ExecuteSqlRawAsync(@"
+IF COL_LENGTH('Serviseri', 'UserName') IS NULL
+BEGIN
+    ALTER TABLE [Serviseri] ADD [UserName] nvarchar(50) NULL;
+END");
+
+            await context.Database.ExecuteSqlRawAsync(@"
+IF COL_LENGTH('Serviseri', 'Email') IS NULL
+BEGIN
+    ALTER TABLE [Serviseri] ADD [Email] nvarchar(100) NULL;
+END");
+
+            await context.Database.ExecuteSqlRawAsync(@"
+IF COL_LENGTH('Serviseri', 'PasswordHash') IS NULL
+BEGIN
+    ALTER TABLE [Serviseri] ADD [PasswordHash] nvarchar(500) NULL;
+END");
+
+            await context.Database.ExecuteSqlRawAsync(@"
+IF NOT EXISTS (
+    SELECT 1
+    FROM sys.indexes
+    WHERE name = 'IX_Serviseri_UserName'
+      AND object_id = OBJECT_ID('Serviseri')
+)
+BEGIN
+    CREATE UNIQUE INDEX [IX_Serviseri_UserName]
+    ON [Serviseri] ([UserName])
+    WHERE [UserName] IS NOT NULL;
+END");
+
+            await context.Database.ExecuteSqlRawAsync(@"
+IF NOT EXISTS (
+    SELECT 1
+    FROM sys.indexes
+    WHERE name = 'IX_Serviseri_Email'
+      AND object_id = OBJECT_ID('Serviseri')
+)
+BEGIN
+    CREATE UNIQUE INDEX [IX_Serviseri_Email]
+    ON [Serviseri] ([Email])
+    WHERE [Email] IS NOT NULL;
+END");
+        }
+
+        private static async Task EnsureVlasnikLoginsAsync(
+            AutoServiceDbContext context,
+            IPasswordHasher passwordHasher)
+        {
+            string defaultPasswordHash = passwordHasher.Hash("Vlasnik123!");
+            string markoPasswordHash = passwordHasher.Hash("Marko123!");
+            string jovanPasswordHash = passwordHasher.Hash("Jovan123!");
+
+            await context.Database.ExecuteSqlInterpolatedAsync($@"
+UPDATE Vlasnici
+SET UserName = LOWER(LEFT(Email, CHARINDEX('@', Email + '@') - 1))
+WHERE UserName IS NULL OR UserName = ''");
+
+            await context.Database.ExecuteSqlInterpolatedAsync($@"
+UPDATE Vlasnici
+SET PasswordHash =
+    CASE
+        WHEN Email = 'marko@gmail.com' THEN {markoPasswordHash}
+        WHEN Email = 'jovan@gmail.com' THEN {jovanPasswordHash}
+        ELSE {defaultPasswordHash}
+    END
+WHERE PasswordHash IS NULL OR PasswordHash = ''");
+        }
+
+        private static async Task EnsureAdminServiserAsync(
+            AutoServiceDbContext context,
+            IPasswordHasher passwordHasher)
+        {
+            string adminEmail = "admin@autoservice.com";
+            string adminUserName = "admin";
+
+            var adminServiser = await context.Serviseri
+                .FirstOrDefaultAsync(s => s.Email == adminEmail);
+
+            if (adminServiser == null)
+            {
+                adminServiser = new Serviser
+                {
+                    Ime = "Nikola",
+                    Prezime = "Nikolic",
+                    Specijalizacija = "Mehanika",
+                    Aktivan = true
+                };
+
+                await context.Serviseri.AddAsync(adminServiser);
+            }
+
+            adminServiser.IsAdmin = true;
+            adminServiser.UserName = adminUserName;
+            adminServiser.Email = adminEmail;
+            adminServiser.PasswordHash ??= passwordHasher.Hash("Admin123!");
+            adminServiser.Aktivan = true;
+
+            await context.SaveChangesAsync();
+        }
     }
 }
+

@@ -1,46 +1,28 @@
 ﻿using AutoService.Application.DTOs;
-using AutoService.Application.Repositories;
-using AutoService.Domain.Models;
+using AutoService.Application.Mediator;
+using AutoService.Application.ServisneUsluge.Commands;
+using AutoService.Application.ServisneUsluge.Queries;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace AutoService.Web.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ServisneUslugeController : Controller
     {
-        private readonly IRepository<ServisnaUsluga> _uslugaRepository;
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IMediator _mediator;
 
-        public ServisneUslugeController(
-            IRepository<ServisnaUsluga> uslugaRepository,
-            IUnitOfWork unitOfWork)
+        public ServisneUslugeController(IMediator mediator)
         {
-            _uslugaRepository = uslugaRepository;
-            _unitOfWork = unitOfWork;
+            _mediator = mediator;
         }
 
         public async Task<IActionResult> Index(
             string? pretraga,
             bool? aktivna)
         {
-            IQueryable<ServisnaUsluga> query =
-                _uslugaRepository.GetAll();
-
-            if (!string.IsNullOrWhiteSpace(pretraga))
-            {
-                query = query.Where(u =>
-                    u.Naziv.Contains(pretraga) ||
-                    u.Opis.Contains(pretraga));
-            }
-
-            if (aktivna.HasValue)
-            {
-                query = query.Where(u => u.Aktivna == aktivna.Value);
-            }
-
-            var usluge = await query
-                .OrderBy(u => u.Naziv)
-                .ToListAsync();
+            var usluge = await _mediator.Send(
+                new GetServisneUslugeQuery(pretraga, aktivna));
 
             ViewBag.Pretraga = pretraga;
             ViewBag.Aktivna = aktivna;
@@ -67,55 +49,30 @@ namespace AutoService.Web.Controllers
                 return View(dto);
             }
 
-            bool nazivPostoji = await _uslugaRepository
-                .GetAll()
-                .AnyAsync(u => u.Naziv == dto.Naziv);
-
-            if (nazivPostoji)
+            try
             {
-                ModelState.AddModelError(
-                    nameof(dto.Naziv),
-                    "Servisna usluga sa ovim nazivom već postoji.");
+                await _mediator.Send(new CreateServisnaUslugaCommand(dto));
+                TempData["Uspeh"] = "Servisna usluga je uspeÅ¡no dodata.";
 
+                return RedirectToAction(nameof(Index));
+            }
+            catch (InvalidOperationException ex)
+            {
+                ModelState.AddModelError(string.Empty, ex.Message);
                 return View(dto);
             }
-
-            var usluga = new ServisnaUsluga
-            {
-                Naziv = dto.Naziv.Trim(),
-                Opis = dto.Opis.Trim(),
-                Cena = dto.Cena,
-                TrajanjeUMinutima = dto.TrajanjeUMinutima,
-                Aktivna = dto.Aktivna
-            };
-
-            await _uslugaRepository.AddAsync(usluga);
-            await _unitOfWork.SaveChangesAsync();
-
-            TempData["Uspeh"] = "Servisna usluga je uspešno dodata.";
-
-            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var usluga = await _uslugaRepository.GetByIdAsync(id);
+            var dto = await _mediator.Send(
+                new GetServisnaUslugaEditQuery(id));
 
-            if (usluga == null)
+            if (dto == null)
             {
                 return NotFound();
             }
-
-            var dto = new ServisnaUslugaDto
-            {
-                ServisnaUslugaId = usluga.ServisnaUslugaId,
-                Naziv = usluga.Naziv,
-                Opis = usluga.Opis,
-                Cena = usluga.Cena,
-                TrajanjeUMinutima = usluga.TrajanjeUMinutima,
-                Aktivna = usluga.Aktivna
-            };
 
             return View(dto);
         }
@@ -129,51 +86,25 @@ namespace AutoService.Web.Controllers
                 return View(dto);
             }
 
-            var usluga = await _uslugaRepository
-                .GetByIdAsync(dto.ServisnaUslugaId);
-
-            if (usluga == null)
+            try
             {
-                return NotFound();
+                await _mediator.Send(new UpdateServisnaUslugaCommand(dto));
+                TempData["Uspeh"] = "Servisna usluga je uspeÅ¡no izmenjena.";
+
+                return RedirectToAction(nameof(Index));
             }
-
-            bool nazivPostoji = await _uslugaRepository
-                .GetAll()
-                .AnyAsync(u =>
-                    u.Naziv == dto.Naziv &&
-                    u.ServisnaUslugaId != dto.ServisnaUslugaId);
-
-            if (nazivPostoji)
+            catch (InvalidOperationException ex)
             {
-                ModelState.AddModelError(
-                    nameof(dto.Naziv),
-                    "Druga servisna usluga već koristi ovaj naziv.");
-
+                ModelState.AddModelError(string.Empty, ex.Message);
                 return View(dto);
             }
-
-            usluga.Naziv = dto.Naziv.Trim();
-            usluga.Opis = dto.Opis.Trim();
-            usluga.Cena = dto.Cena;
-            usluga.TrajanjeUMinutima = dto.TrajanjeUMinutima;
-            usluga.Aktivna = dto.Aktivna;
-
-            _uslugaRepository.Update(usluga);
-            await _unitOfWork.SaveChangesAsync();
-
-            TempData["Uspeh"] = "Servisna usluga je uspešno izmenjena.";
-
-            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
-            var usluga = await _uslugaRepository
-                .GetAll()
-                .Include(u => u.Termini)
-                    .ThenInclude(t => t.Vozilo)
-                .FirstOrDefaultAsync(u => u.ServisnaUslugaId == id);
+            var usluga = await _mediator.Send(
+                new GetServisnaUslugaDetailsQuery(id));
 
             if (usluga == null)
             {
@@ -186,10 +117,8 @@ namespace AutoService.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {
-            var usluga = await _uslugaRepository
-                .GetAll()
-                .Include(u => u.Termini)
-                .FirstOrDefaultAsync(u => u.ServisnaUslugaId == id);
+            var usluga = await _mediator.Send(
+                new GetServisnaUslugaDeleteQuery(id));
 
             if (usluga == null)
             {
@@ -203,35 +132,18 @@ namespace AutoService.Web.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var usluga = await _uslugaRepository
-                .GetAll()
-                .Include(u => u.Termini)
-                .FirstOrDefaultAsync(u => u.ServisnaUslugaId == id);
-
-            if (usluga == null)
+            try
             {
-                return NotFound();
+                await _mediator.Send(new DeleteServisnaUslugaCommand(id));
+                TempData["Uspeh"] = "Servisna usluga je uspeÅ¡no obraÄ‘ena.";
             }
-
-            if (usluga.Termini.Any())
+            catch (InvalidOperationException ex)
             {
-                usluga.Aktivna = false;
-
-                _uslugaRepository.Update(usluga);
-                await _unitOfWork.SaveChangesAsync();
-
-                TempData["Uspeh"] =
-                    "Usluga ima termine, pa je deaktivirana umesto obrisana.";
-
-                return RedirectToAction(nameof(Index));
+                TempData["Greska"] = ex.Message;
             }
-
-            _uslugaRepository.Delete(usluga);
-            await _unitOfWork.SaveChangesAsync();
-
-            TempData["Uspeh"] = "Servisna usluga je uspešno obrisana.";
 
             return RedirectToAction(nameof(Index));
         }
     }
 }
+

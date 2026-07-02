@@ -30,10 +30,11 @@ namespace AutoService.Infrastructure.Configuration
             builder.HasIndex(v => v.Registracija)
                 .IsUnique();
 
-            builder.HasOne(v => v.Korisnik)
+            builder.HasOne(v => v.Vlasnik)
                 .WithMany(k => k.Vozila)
-                .HasForeignKey(v => v.KorisnikId)
+                .HasForeignKey(v => v.VlasnikId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
+

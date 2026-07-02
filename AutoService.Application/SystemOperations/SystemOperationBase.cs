@@ -30,3 +30,4 @@ namespace AutoService.Application.SystemOperations
         protected abstract Task ExecuteOperationAsync();
     }
 }
+

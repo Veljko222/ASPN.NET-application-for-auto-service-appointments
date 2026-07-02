@@ -13,7 +13,7 @@ namespace AutoService.Infrastructure.Data
             {
             }
 
-            public DbSet<Korisnik> Korisnici { get; set; }
+            public DbSet<Vlasnik> Vlasnici { get; set; }
 
             public DbSet<Vozilo> Vozila { get; set; }
 
@@ -32,3 +32,4 @@ namespace AutoService.Infrastructure.Data
             }
         }
 }
+

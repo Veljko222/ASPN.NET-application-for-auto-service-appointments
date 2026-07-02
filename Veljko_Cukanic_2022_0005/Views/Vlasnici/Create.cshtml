@@ -1,0 +1,75 @@
+﻿@model AutoService.Application.DTOs.VlasnikDto
+
+@{
+    ViewData["Title"] = "Dodavanje vlasnika";
+}
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header">
+            <h2>Dodavanje vlasnika</h2>
+        </div>
+
+        <div class="card-body">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Ime" class="form-label"></label>
+                    <input asp-for="Ime" class="form-control" />
+                    <span asp-validation-for="Ime"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Prezime" class="form-label"></label>
+                    <input asp-for="Prezime" class="form-control" />
+                    <span asp-validation-for="Prezime"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Telefon" class="form-label"></label>
+                    <input asp-for="Telefon" class="form-control" />
+                    <span asp-validation-for="Telefon"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="UserName" class="form-label"></label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName"
+                          class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password"
+                          class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Sačuvaj
+                </button>
+
+                <a asp-action="Index" class="btn btn-secondary">
+                    Nazad
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
